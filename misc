@@ -54,6 +54,7 @@ action_reason: 'May mention mods'
 # This will filter all instances of a certain word, phrase, or regex, UNLESS contained within quotes
 # This is partially broken and idk how to fix it
 # If you're curious it doesn't detect the string if either side of it has a quote
+# Honestly just don't use this one it's a shitshow
 title+body (regex): '(?<!["''])INSERTWORDHERE(?!(.*["'']))'
 action: filter
 action_reason: 'Contains disallowed word "{{match}}"'
