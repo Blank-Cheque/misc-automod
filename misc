@@ -38,3 +38,13 @@ author:
 reports: 4
 action: filter
 action_reason: 'Auto-filtered due to high amount of reports'
+
+---
+
+# This will filter all posts which mention the mods
+type: any
+author:
+     is_moderator: false
+title+body (regex): 'mod(erator)?s?'
+action: report
+action_reason: 'May mention mods'
