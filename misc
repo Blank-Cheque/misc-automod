@@ -1,0 +1,31 @@
+# This will remove all mentions of subreddits other than a specific set of subreddits
+type: any
+title+body (regex): '\/?r\/(?!(SUBREDDIT1|SUBREDDIT2|SUBREDDIT3|ETC))[^\s]*'
+action: remove
+action_reason: 'Mentions third-party sub
+
+---
+
+# This will remove all posts with one-word titles
+# To increase title size minimum, add "(\s[^\s]*?)?" without quotation marks to the place immediately before ')?$' at the end
+# E.g., to make the limit two words change the regex to '^[^\s]*?(\s[^\s]*?)?$', to make it three change it to '^[^\s]*?(\s[^\s]*?(\s[^\s]*?)?)?$' and so on
+type: submission
+title (regex): '^[^\s]*?$'
+action: remove
+action_reason: 'Title is too short'
+
+---
+
+# This will remove all posts whose titles mention a subreddit
+type: submission
+title (regex): '\/?r\/\w+'
+action: remove
+action_reason: 'A subreddit is mentioned in the title
+
+---
+
+# This will remove all posts whose titles are 'Found this on /r/X' 'From /r/X' etc
+type: submission
+title (regex): '^(found |saw |from )(this )?(on |in )?\/?r\/\w+$'
+action: remove
+action_reason: 'Lazy title "{{title}}"'
