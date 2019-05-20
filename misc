@@ -1,6 +1,6 @@
 # This will remove all mentions of subreddits other than a specific set of subreddits
 type: any
-title+body (regex): '\/?r\/(?!(SUBREDDIT1|SUBREDDIT2|SUBREDDIT3|ETC))[^\s]*'
+title+body (regex): '\/?r\/(?!(SUBREDDIT 1|SUBREDDIT 2|SUBREDDIT 3|ETC))[^\s]*'
 action: remove
 action_reason: 'Mentions third-party sub
 
@@ -20,3 +20,13 @@ comment: |
 type: submission
 action: filter
 action_reason: 'Manual approval is activated; please check this post for rule violations'
+
+---
+
+# This will remove all posts by a certain user, commonly referred to as an automod ban
+type: any
+author: ["USER 1", "USER 2", "USER 3", "ETC"]
+action: remove
+action_reason: '{{author}} is automod-banned'
+
+---
