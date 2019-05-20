@@ -30,3 +30,11 @@ action: remove
 action_reason: '{{author}} is automod-banned'
 
 ---
+
+# This will filter all posts which get 4 or more reports, except modposts
+type: any
+author: 
+  is_moderator: false
+reports: 4
+action: filter
+action_reason: 'Auto-filtered due to high amount of reports'
