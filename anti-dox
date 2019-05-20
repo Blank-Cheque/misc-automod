@@ -1,0 +1,16 @@
+###BEGIN ANTI-DOX RULES###
+
+# Phone numbers
+type: any
+title+body (regex): '(\+?\d)?([ .-])?\(?(\d{3})\)?([ .-])?(\d{3})([ .-])?(\d{4})'
+action: remove
+action_reason: 'Possible phone number - {{match}}'
+modmail_subject: 'Possible dox attempt'
+modmail: |
+  {{permalink}}
+  
+  This {{kind}} by /u/{{author}} was removed because it may contain a phone number. Please investigate immediately.
+  
+  If the user is doxxing, ban them and [report them to the reddit admins](http://www.reddit.com/message/compose?to=%2Fr%2Freddit.com&subject=Doxxing%20Report:%20%2Fu%2F{{author}}&message=%2Fu%2F{{author}}%20posted%20a%20phone%20number:%20{{permalink}}) immediately.
+
+---
