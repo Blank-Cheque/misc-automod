@@ -48,3 +48,10 @@ author:
 title+body (regex): 'mod(erator)?s?'
 action: report
 action_reason: 'May mention mods'
+
+---
+
+# This will filter all instances of a certain word, phrase, or regex, UNLESS contained within quotes
+title+body (regex): '(?<!(["'']))INSERTWORDHERE(?!(.*["'']))'
+action: filter
+action_reason: 'Contains disallowed word "{{match}}"'
