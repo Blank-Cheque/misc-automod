@@ -2,7 +2,7 @@
 type: any
 title+body (regex): '\/?r\/(?!(SUBREDDIT 1|SUBREDDIT 2|SUBREDDIT 3|ETC))[^\s]*'
 action: remove
-action_reason: 'Mentions third-party sub
+action_reason: 'Mentions third-party sub'
 
 ---
 
