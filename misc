@@ -55,7 +55,7 @@ action_reason: 'May mention mods'
 # This is partially broken and idk how to fix it
 # If you're curious it doesn't detect the string if either side of it has a quote
 # Honestly just don't use this one it's a shitshow
-# If you replace the regex with '(?<!["''])test(?!(["'']))' it'll detect it only if there are quotes immediately on either side, that one works
+# If you replace the regex with '(?<!["''])INSERTWORDHERE(?!(["'']))' it'll detect it only if there are quotes immediately on either side, that one works
 title+body (regex): '(?<!["''])INSERTWORDHERE(?!(.*["'']))'
 action: filter
 action_reason: 'Contains disallowed word "{{match}}"'
