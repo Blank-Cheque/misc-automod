@@ -19,7 +19,7 @@ action_reason: 'Title is too short'
 type: submission
 title (regex): '\/?r\/\w+'
 action: remove
-action_reason: 'A subreddit is mentioned in the title'
+action_reason: 'A subreddit ({{match}}) is mentioned in the title'
 
 ---
 
