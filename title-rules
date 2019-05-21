@@ -9,6 +9,9 @@ action_reason: 'Title is too short'
 # To increase the size limit to three, append "(\s[^\s]*?)?" immediately before ')?$' i.e. "^[^\s]*?(\s[^\s]*?(\s[^\s]*?)?)?$"
 # To icnrease the size limit to four, append "(\s[^\s]*?)?" immediately before ')?)?$' i.e. "^[^\s]*?(\s[^\s]*?(\s[^\s]*?(\s[^\s]*?)?)?)?$"
 # Hopefully you're getting the point by now
+## Instructions on reversing rule (i.e. all posts with length longer than X are removed) ##
+# Do the same as above to choose maximum size. Change "title (regex)" to "~title (regex)". 
+# You might want to change the action_reason to 'Title is too long'
 
 ---
 
@@ -16,7 +19,7 @@ action_reason: 'Title is too short'
 type: submission
 title (regex): '\/?r\/\w+'
 action: remove
-action_reason: 'A subreddit is mentioned in the title
+action_reason: 'A subreddit is mentioned in the title'
 
 ---
 
@@ -24,4 +27,4 @@ action_reason: 'A subreddit is mentioned in the title
 type: submission
 title (regex): '^(found |saw |from )(this )?(on |in )?\/?r\/\w+$'
 action: remove
-action_reason: 'Lazy title "{{title}}"'
+action_reason: 'Lazy title: "{{title}}"'
