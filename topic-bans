@@ -1,0 +1,7 @@
+# Removes all mentions of trans stuff
+type: [Enter 'any', 'comment', 'submission', 'text submission', or 'link submission']
+title+body (regex): 
+  - '\btr(oons?|ans|ann(y|ies|ers?))[-\s]?(gender(ed|ism)?s?|s?exual(it(y|ies))?s?|phob(e|ia|ic)s?|trend(ers?|ing)|cults?)?\b'
+  - '\bcis(gender(ed)?s?)?\b'
+action: remove
+action_reason: "Contains disallowed word '{{match}}'"
