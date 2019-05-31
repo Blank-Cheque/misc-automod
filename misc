@@ -1,8 +1,8 @@
-# This will remove all mentions of subreddits other than a specific set of subreddits
+# This will remove all mentions of subreddits other than a certain set of subreddits
 type: any
-title+body (regex): '\/?r\/(?!(SUBREDDIT 1|SUBREDDIT 2|SUBREDDIT 3|ETC))[^\s]*'
+title+body (regex): '((https?\:\/\/)?(www\.|old\.|new\.)?reddit\.com)?\/?r\/(?!(SUBREDDIT 1|SUBREDDIT 2|SUBREDDIT 3)(?!\w))\S+\b'
 action: remove
-action_reason: 'Mentions third-party sub'
+action_reason: 'Disallowed sub mention'
 
 ---
 
