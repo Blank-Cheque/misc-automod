@@ -59,3 +59,13 @@ action_reason: 'May mention mods'
 title+body (regex): '(?<!["''])INSERTWORDHERE(?!(.*["'']))'
 action: filter
 action_reason: 'Contains disallowed word "{{match}}"'
+
+---
+
+# Removes comments which contain image links
+type: comment
+title+body (regex): 
+    - '\b(https?\:\/\/)?(\S+\.)?(\S+)(\.(com?|net|gov|us|uk|info|eu|it|io|tv))\/([\S]+)(\.(png|jpe?g|gif))\b'
+    - '\b(https?\:\/\/)?(www\.)?google\.com\/search\?\S+imgrc\=\S+\b'
+action: remove
+action_reason: "Comment contains image link"
