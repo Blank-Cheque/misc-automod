@@ -77,7 +77,7 @@ action_reason: "Comment contains image or video link: '{{match}}'"
 # Removes comments which contain image links (videos allowed)
 type: comment
 title+body (regex): 
-    - '\b(?:https?\:\/\/)?((?:\S+\.)?(?:\S+)(?:\.(?:com?|net|gov|us|uk|info|eu|it|io|tv|moe|ws)))(\/(?:[\S]+)(\.(?:png|jpe?g|gif)))\b'
+    - '\b(?:https?\:\/\/)?((?:\S+\.)?(?:\S+)(?:\.(?:com?|net|gov|us|uk|info|eu|it|io|tv|moe|ws)))(\/(?:[\S]+)(\.(?:png|jpe?g)))\b'
     - '\b(?:https?\:\/\/)?((?:www\.)?google\.com)(\/search\?\S+)(imgrc\=\S+)\b'
 action: remove
 action_reason: "Comment contains image link: '{{match}}'"
@@ -87,7 +87,7 @@ action_reason: "Comment contains image link: '{{match}}'"
 # Removes comments which contain video links (images allowed)
 type: comment
 title+body (regex): 
-    - '\b(?:https?\:\/\/)?((?:\S+\.)?(?:\S+)(?:\.(?:com?|net|gov|us|uk|info|eu|it|io|tv|moe|ws)))(\/(?:[\S]+)(\.(?:gifv|mp4)))\b'
+    - '\b(?:https?\:\/\/)?((?:\S+\.)?(?:\S+)(?:\.(?:com?|net|gov|us|uk|info|eu|it|io|tv|moe|ws)))(\/(?:[\S]+)(\.(?:gifv?|mp4)))\b'
     - '\b(?:https?\:\/\/)?((?:www\.)?gfycat.com)(\/\S+)\b'
     - '\b(?:https?\:\/\/)?((?:www\.)?youtu\.?be(?:\.com)?)(\/watch\S+)\b'
 action: remove
