@@ -5,7 +5,7 @@ action: remove
 action_reason: 'Title is too short'
 
 ## Instructions on increasing size limit ##
-# To increase the size limit to two, append "(\s[^\s]*?)?" immediately before '?$' i.e. "^[^\s]*?(\s[^\s]*?)?$"
+# To increase the size limit to two, append "(\s[^\s]*?)?" immediately before '$' i.e. "^[^\s]*?(\s[^\s]*?)?$"
 # To increase the size limit to three, append "(\s[^\s]*?)?" immediately before ')?$' i.e. "^[^\s]*?(\s[^\s]*?(\s[^\s]*?)?)?$"
 # To icnrease the size limit to four, append "(\s[^\s]*?)?" immediately before ')?)?$' i.e. "^[^\s]*?(\s[^\s]*?(\s[^\s]*?(\s[^\s]*?)?)?)?$"
 # Hopefully you're getting the point by now
