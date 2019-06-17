@@ -79,6 +79,7 @@ type: comment
 title+body (regex): 
     - '\b(?:https?\:\/\/)?((?:\S+\.)?(?:\S+)(?:\.(?:com?|net|gov|us|uk|info|eu|it|io|tv|moe|ws)))(\/(?:[\S]+)(\.(?:png|jpe?g)))\b'
     - '\b(?:https?\:\/\/)?((?:www\.)?google\.com)(\/search\?\S+)(imgrc\=\S+)\b'
+    - '\b(?:https?\:\/\/)?((?:www\.)?imgur\.com)((\/a)\/?\w{4,})(\.(?:png|jpe?g))\b'
 action: remove
 action_reason: "Comment contains image link: '{{match}}'"
 
