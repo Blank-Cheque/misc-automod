@@ -41,7 +41,7 @@ action_reason: 'Auto-filtered due to high amount of reports'
 
 ---
 
-# This will filter all posts which mention the mods
+# This will report all posts which mention the mods
 type: any
 author:
      is_moderator: false
