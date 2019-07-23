@@ -1,95 +1,1107 @@
-# This will remove all mentions of subreddits other than a certain set of subreddits
-type: any
-title+body (regex): '((https?\:\/\/)?(np\.|www\.|old\.|new\.)?reddit\.com)?\/?r\/(?!(SUBREDDIT 1|SUBREDDIT 2|SUBREDDIT 3)(?!\w))\S+\b'
-action: remove
-action_reason: 'Disallowed sub mention'
+.submit-link .morelink { position: relative; visibility: hidden; }
+.submit-link .morelink a { font-size: 0px; background-color: #595959; border-style: solid; border-width: 2px 2px 4px 2px; height: 170px; line-height: 50px; }
+.submit-link .morelink a:before { visibility: visible; content: "submit link"; font-size: 14px; border-style: inherit; border-color: #222; border-width: inherit; border-radius: 50px; padding-right: 70px; padding-left: 71px; background-color: inherit; padding-bottom: 5px; padding-top: 5px; color: #222222; margin-left: -5px; }
+.submit-link .morelink a:hover { background-color: #505050; }
+.submit-link .morelink a:active { border-width: 2px 2px 2px 2px; transform: translateY(2px); }
 
----
+.submit-text .morelink { position: relative; visibility: hidden; }
+.submit-text .morelink a { font-size: 0px; background-color: #595959; border-style: solid; border-width: 2px 2px 4px 2px; height: 170px; line-height: 50px; }
+.submit-text .morelink a:before { visibility: visible; content: "submit text"; font-size: 14px; border-style: inherit; border-color: #222; border-width: inherit; border-radius: 50px; padding-right: 68px; padding-left: 70.5px; background-color: inherit; padding-bottom: 5px; padding-top: 5px; color: #222222; margin-left: -5px; }
+.submit-text .morelink a:hover { background-color: #505050; }
+.submit-text .morelink a:active { border-width: 2px 2px 2px 2px; transform: translateY(2px); }
 
-# This will put a stickied comment on all posts
-type: submission
-comment_stickied: true
-comment: |
-  Your comment here
-  
-  This uses the same syntax as a reddit post
+.disabled .morelink { position: relative; visibility: hidden; }
+.disabled .morelink a { background-color: #b3b3b3; border-style: solid; border-width: 2px; height: 170px; line-height: 35px; }
+.disabled .morelink a:before { visibility: visible; content: "restricted"; font-size: 14px; border-style: inherit; border-color: #222; border-width: inherit; border-radius: 50px; padding-right: 60px; padding-left: 60px; background-color: inherit; padding-bottom: 5px; padding-top: 5px; color: #737373; }
 
----
+.create .morelink { position: relative; visibility: hidden; margin-bottom: 20px; }
+.create .morelink a { font-size: 0px; background-color: #595959; border-style: solid; border-width: 2px 2px 4px 2px; height: 150px; line-height: 50px; }
+.create .morelink a:before { visibility: visible; content: "create subreddit"; font-size: 14px; border-style: inherit; border-color: #222; border-width: inherit; border-radius: 50px; padding-right: 40px; padding-left: 40px; background-color: inherit; padding-bottom: 5px; padding-top: 5px; color: #222222; margin-left: -5px; }
+.create .morelink a:hover { background-color: #505050; }
+.create .morelink a:active { border-width: 2px 2px 2px 2px; transform: translateY(2px); }
+.spacer .subtitle { color: #222222; }
 
-# This will force you to manually approve all posts
-type: submission
-action: filter
-action_reason: 'Manual approval is activated; please check this post for rule violations'
+.wiki-page-content .morelink.discussionlink { position: relative; visibility: hidden; }
+.wiki-page-content .morelink.discussionlink a { font-size: 0px; background-color: #595959; border-style: solid; border-width: 2px 2px 4px 2px; height: 150px; line-height: 50px; }
+.wiki-page-content .morelink.discussionlink a:before { visibility: visible; content: "submit discussion"; font-size: 14px; border-style: inherit; border-color: #222; border-width: inherit; border-radius: 50px; padding-right: 40px; padding-left: 40px; background-color: inherit; padding-bottom: 5px; padding-top: 5px; color: #222222; margin-left: -5px; }
+.wiki-page-content .morelink.discussionlink a:hover { background-color: #505050; }
+.wiki-page-content .morelink.discussionlink a:active { border-width: 2px 2px 2px 2px; transform: translateY(2px); }
 
----
+.submit { margin-bottom: 15px; }
+.premium-banner { margin-top: 15px; }
 
-# This will remove all posts by a certain user, commonly referred to as an automod ban or a shadowban (though this is not technically a shadowban)
-type: any
-author: ["USER 1", "USER 2", "USER 3", "ETC"]
-action: remove
-action_reason: '{{author}} is automod-banned'
+.fancy-toggle-button.subscribe-button .option { color: #FFF!important; }
 
----
+div.titlebox span.fancy-toggle-button.subscribe-button .option.add { position: relative; visibility: hidden; border-bottom: solid 2px #020; background-color: #488448; }
+div.titlebox span.fancy-toggle-button.subscribe-button .option.add:before { background-color: inherit; content: "subscribe"; visibility: visible; font-size: 16px; color: #FFFFFF; border-bottom: inherit; border-left: solid 1px #020; border-top: solid 1px #020; border-right: solid 1px #020; padding-left: 27px; padding-right: 28px; border-radius: 14px; padding-top: 2px; padding-bottom: 2px; }
+div.titlebox span.fancy-toggle-button.subscribe-button .option.add:active { border-bottom: solid 1px #020; top: 1px; }
+div.titlebox span.fancy-toggle-button.subscribe-button .option.add:hover { background-color: #366336; }
 
-# This will filter all posts which get 4 or more reports, except modposts
-type: any
-author: 
-  is_moderator: false
-reports: 4
-action: filter
-action_reason: 'Auto-filtered due to high amount of reports'
+div.titlebox span.fancy-toggle-button.subscribe-button .option.remove { position: relative; visibility: hidden; border-bottom: solid 2px #200; background-color: #990000; }
+div.titlebox span.fancy-toggle-button.subscribe-button .option.remove:before { background-color: inherit; content: "unsubscribe"; visibility: visible; font-size: 16px; color: #FFFFFF; border-bottom: inherit; border-left: solid 1px #200; border-top: solid 1px #200; border-right: solid 1px #200; padding-left: 16px; padding-right: 16px; border-radius: 14px; padding-top: 2px; padding-bottom: 2px; }
+div.titlebox span.fancy-toggle-button.subscribe-button .option.remove:active { border-bottom: solid 1px #200; top: 1px; }
+div.titlebox span.fancy-toggle-button.subscribe-button .option.remove:hover { background-color: #800000; }
 
----
+div.subscription-box .RESDashboardToggle { display: none; }
+div.titlebox .RESDashboardToggle:not(.remove) { position: relative; visibility: hidden; border-bottom: solid 2px #020; background-color: #488448; }
+div.titlebox .RESDashboardToggle:not(.remove)::before { background-color: inherit; content: "+dashboard"; visibility: visible; font-size: 16px; color: #FFFFFF; border-bottom: inherit; border-left: solid 1px #020; border-top: solid 1px #020; border-right: solid 1px #020; padding-left: 16.5px; padding-right: 16px; border-radius: 14px; padding-top: 2px; padding-bottom: 2px; }
+div.titlebox .RESDashboardToggle:not(.remove):active { border-bottom: solid 1px #020; top: 1px; margin-bottom: 6px; }
+div.titlebox .RESDashboardToggle:not(.remove):hover { background-color: #366336; }
 
-# This will report all posts which mention the mods
-type: any
-author:
-     is_moderator: false
-title+body (regex): 'mod(erator)?s?'
-action: report
-action_reason: 'May mention mods'
+div.titlebox .RESDashboardToggle.remove { position: relative; visibility: hidden; border-bottom: solid 2px #200; background-color: #990000; }
+div.titlebox .RESDashboardToggle.remove:before { background-color: inherit; content: "-dashboard"; visibility: visible; font-size: 16px; color: #FFFFFF; border-bottom: inherit; border-left: solid 1px #200; border-top: solid 1px #200; border-right: solid 1px #200; padding-left: 19.5px; padding-right: 19px; border-radius: 14px; padding-top: 2px; padding-bottom: 2px; }
+div.titlebox .RESDashboardToggle.remove:active { border-bottom: solid 1px #200; top: 1px; margin-bottom: 6px; }
+div.titlebox .RESDashboardToggle.remove:hover { background-color: #800000; }
 
----
+div.subscription-box .RESshortcutside { display: none; }
+div.titlebox .RESshortcutside:not(.remove) { position: relative; visibility: hidden; border-bottom: solid 2px #020; background-color: #488448; }
+div.titlebox .RESshortcutside:not(.remove)::before { background-color: inherit; content: "+shortcut"; visibility: visible; font-size: 16px; color: #FFFFFF; border-bottom: inherit; border-left: solid 1px #020; border-top: solid 1px #020; border-right: solid 1px #020; padding-left: 26px; padding-right: 26px; border-radius: 14px; padding-top: 2px; padding-bottom: 2px; }
+div.titlebox .RESshortcutside:not(.remove):active { border-bottom: solid 1px #020; top: 1px; margin-bottom: 6px; }
+div.titlebox .RESshortcutside:not(.remove):hover { background-color: #366336; }
 
-# This will filter all instances of a certain word, phrase, or regex, UNLESS contained within quotes
-# This is partially broken and idk how to fix it
-# If you're curious it doesn't detect the string if either side of it has a quote
-# Honestly just don't use this one it's a shitshow
-# If you replace the regex with '(?<!["''])INSERTWORDHERE(?!(["'']))' it'll detect it only if there are quotes immediately on either side, that one works
-title+body (regex): '(?<!["''])INSERTWORDHERE(?!(.*["'']))'
-action: filter
-action_reason: 'Contains disallowed word "{{match}}"'
+div.titlebox .RESshortcutside.remove { position: relative; visibility: hidden; border-bottom: solid 2px #200; background-color: #990000; }
+div.titlebox .RESshortcutside.remove:before { background-color: inherit; content: "-shortcut"; visibility: visible; font-size: 16px; color: #FFFFFF; border-bottom: inherit; border-left: solid 1px #200; border-top: solid 1px #200; border-right: solid 1px #200; padding-left: 29px; padding-right: 29px; border-radius: 14px; padding-top: 2px; padding-bottom: 2px; }
+div.titlebox .RESshortcutside.remove:active { border-bottom: solid 1px #200; top: 1px; margin-bottom: 6px; }
+div.titlebox .RESshortcutside.remove:hover { background-color: #800000; }
 
----
 
-# Removes comments which contain image or video links
-type: comment
-title+body (regex): 
-    - '\b(?:https?\:\/\/)?((?:\S+\.)?(?:\S+)(?:\.(?:com?|net|gov|us|uk|info|eu|it|io|tv|moe|ws)))(\/(?:[\S]+)(\.(?:png|jpe?g|gifv?|mp4)))\b'
-    - '\b(?:https?\:\/\/)?((?:www\.)?google\.com)(\/search\?\S+)(imgrc\=\S+)\b'
-    - '\b(?:https?\:\/\/)?((?:www\.)?gfycat.com)(\/\S+)\b'
-    - '\b(?:https?\:\/\/)?((?:www\.)?youtu\.?be(?:\.com)?)(\/watch\S+)\b'
-action: remove
-action_reason: "Comment contains image or video link: '{{match}}'"
+ul.content { border-radius: 10px; }
 
----
+.titlebox { font-size: 12px; }
 
-# Removes comments which contain image links (videos allowed)
-type: comment
-title+body (regex): 
-    - '\b(?:https?\:\/\/)?((?:\S+\.)?(?:\S+)(?:\.(?:com?|net|gov|us|uk|info|eu|it|io|tv|moe|ws)))(\/(?:[\S]+)(\.(?:png|jpe?g)))\b'
-    - '\b(?:https?\:\/\/)?((?:www\.)?google\.com)(\/search\?\S+)(imgrc\=\S+)\b'
-    - '\b(?:https?\:\/\/)?((?:www\.)?imgur\.com)((\/a)\/?\w{4,})(\.(?:png|jpe?g))\b'
-action: remove
-action_reason: "Comment contains image link: '{{match}}'"
+p code:not(.CodeMirror-line), li code:not(.CodeMirror-line), tr code:not(.CodeMirror-line), h1 code:not(.CodeMirror-line), h2 code:not(.CodeMirror-line), h3 code:not(.CodeMirror-line) { background-color: #282A36!important; color: #DADADA; border-radius: 5px; border-color: #FFF; }
+pre:not(.CodeMirror-line) { background-color: #282A36!important; color: #DADADA; border-radius: 10px; }
+pre:not(.CodeMirror-line) code { background-color: #282A36!important; color: #DADADA; border-radius: 10px; }
+pre.img-url { color: #DADADA!important; border: solid 1px #FFF; margin-bottom: 8px; }
+pre.img-url::selection { background-color: #999; }
+p code:not(.CodeMirror-line)::selection, li code:not(.CodeMirror-line)::selection, tr code:not(.CodeMirror-line)::selection { background-color: #999; }
+pre code:not(.CodeMirror-line)::selection { background-color: #999; }
 
----
+.md-spoiler-text:not(.revealed):hover { background-color: #4d4d4d; animation: spoilerexpand 0.5s linear 1 forwards; -moz-animation: spoilerexpand 0.25s linear 1 forwards; }
+@keyframes spoilerexpand {0% {padding-top: 0px; padding-right: 0px; padding-bottom: 0px; }50% {padding-top: 0.25px; padding-right: 0.25px; padding-bottom: 0.25px; }100% {padding-top: 1px; padding-right: 1px; padding-bottom: 1px; }}
+@-moz-keyframes spoilerexpand {0% {padding-top: 0px; padding-right: 0px; padding-bottom: 0px; }50% {padding-top: 0.25px; padding-right: 0.25px; padding-bottom: 0.25px; }100% {padding-top: 1px; padding-right: 1px; padding-bottom: 1px; }}
 
-# Removes comments which contain video links (images allowed)
-type: comment
-title+body (regex): 
-    - '\b(?:https?\:\/\/)?((?:\S+\.)?(?:\S+)(?:\.(?:com?|net|gov|us|uk|info|eu|it|io|tv|moe|ws)))(\/(?:[\S]+)(\.(?:gifv?|mp4)))\b'
-    - '\b(?:https?\:\/\/)?((?:www\.)?gfycat.com)(\/\S+)\b'
-    - '\b(?:https?\:\/\/)?((?:www\.)?youtu\.?be(?:\.com)?)(\/watch\S+)\b'
-action: remove
-action_reason: "Comment contains video link: '{{match}}'"
+hr { background-color: #595959!important; padding-top: 1px!important; border: none; }
+
+.side { background-color: #808080; }
+.sidecontentbox a { background-color: #808080; }
+.sidecontentbox span { background-color: #808080; }
+.sidecontentbox .content .more a { color: #222222; }
+.side .leavemoderator { background-color: #808080; }
+.side .toggle.leavecontributor-button { background-color: #808080; }
+.side .toggle.sr_style_toggle { background-color: #808080; color: #222222; }
+.side .toggle.flairtoggle { background-color: #808080; }
+.side .toggle.res-sr-style-toggle { background-color: #808080; }
+.side .flairtoggle input { background-color: #222222; }
+.side .spacer { background-color: #808080; }
+
+.leavemoderator, .leavecontributor-button *:not(a), .res-sr-style-toggle *, .flairtoggle *, .titlebox .bottom { color: #222222; }
+.sidecontentbox .title h1 { color: #222222; }
+
+.side del { color: #222222; }
+.side a { color: #004880; }
+.thing a { color: #004880; }
+.livePreview a { color: #004880; }
+.titlebox .tagline { color: #222222; }
+
+.sidecontentbox .content { border: 1px solid #222222; border-radius: 10px; }
+
+.side { padding-left: 28px; padding-right: 22px; border-radius: 0px 0px 0px 10px; border-left: solid 1px #222; border-bottom: solid 1px #222; }
+
+body { background-color: #b3b3b3; }
+html body.compose-page { background-color: #b3b3b3; }
+html #header { border-color: #222222!important; background-color: #595959; }
+html body.compose-page #header-bottom-right { background-color: #808080; }
+html body.compose-page a { color: #004880; }
+
+#siteTable .thing .entry p, #siteTable .thing .entry p del, .thing .entry .flat-list.buttons *, .entry, blockquote p, .thing.self .entry.res-selected { color: #222222; }
+blockquote { border-left: 2px solid #595959!important; background-color: inherit!important; color: inherit!important; }
+.thing.res-selected { background-color: #999999!important; }
+body .thing.self .usertext-body .md, body .thing.self.res-selected .usertext-body .md, body .description .usertext .usertext-body .md { background-color: #808080!important; border-color: #222222!important; }
+body .entry.res-selected, .thing .entry.res-selected .usertext-body, .thing .entry.res-selected .md-container { background-color: inherit!important; }
+#siteTable .thing.comment, .tb-sitetable .tb-thing.tb-comment, .sitetable .thing.message.message-parent, .sitetable .thing.link, .tb-sitetable .tb-thing.tb-submission { border-radius: 10px; }
+#siteTable .entry { padding-top: 5px; padding-bottom: 5px; padding-left: 5px; }
+.domain * { color: #222222!important; }
+.domain { color: #222222; }
+.rank { color: #505050!important; }
+.redditSingleClick::after { color: #222222; }
+time { color: #222222; }
+
+html.res-commentBoxes body.comments-page div.content div.commentarea div.sitetable.nestedlisting .comment:not(.spam) { background-color: #b3b3b3!important; border-color: #222222!important; }
+html.res-commentBoxes body.comments-page div.content div.commentarea div.sitetable.nestedlisting .comment:not(.spam) .comment:not(.spam) { background-color: #999999!important; border-color: #222222!important; }
+html.res-commentBoxes body.comments-page div.content div.commentarea div.sitetable.nestedlisting .comment:not(.spam) .comment:not(.spam) .comment:not(.spam) { background-color: #b3b3b3!important; border-color: #222222!important; }
+html.res-commentBoxes body.comments-page div.content div.commentarea div.sitetable.nestedlisting .comment:not(.spam) .comment:not(.spam) .comment:not(.spam) .comment:not(.spam) { background-color: #999999!important; border-color: #222222!important; }
+html.res-commentBoxes body.comments-page div.content div.commentarea div.sitetable.nestedlisting .comment:not(.spam) .comment:not(.spam) .comment:not(.spam) .comment:not(.spam) .comment:not(.spam) { background-color: #b3b3b3!important; border-color: #222222!important; }
+html.res-commentBoxes body.comments-page div.content div.commentarea div.sitetable.nestedlisting .comment:not(.spam) .comment:not(.spam) .comment:not(.spam) .comment:not(.spam) .comment:not(.spam) .comment:not(.spam) { background-color: #999999!important; border-color: #222222!important; }
+html.res-commentBoxes body.comments-page div.content div.commentarea div.sitetable.nestedlisting .comment:not(.spam) .comment:not(.spam) .comment:not(.spam) .comment:not(.spam) .comment:not(.spam) .comment:not(.spam) .comment:not(.spam) { background-color: #b3b3b3!important; border-color: #222222!important; }
+html.res-commentBoxes body.comments-page div.content div.commentarea div.sitetable.nestedlisting .comment:not(.spam) .comment:not(.spam) .comment:not(.spam) .comment:not(.spam) .comment:not(.spam) .comment:not(.spam) .comment:not(.spam) .comment:not(.spam) { background-color: #999999!important; border-color: #222222!important; }
+html.res-commentBoxes body.comments-page div.content div.commentarea div.sitetable.nestedlisting .comment:not(.spam) .comment:not(.spam) .comment:not(.spam) .comment:not(.spam) .comment:not(.spam) .comment:not(.spam) .comment:not(.spam) .comment:not(.spam) .comment:not(.spam) { background-color: #b3b3b3!important; border-color: #222222!important; }
+html.res-commentBoxes body.comments-page div.content div.commentarea div.sitetable.nestedlisting .comment:not(.spam) .comment:not(.spam) .comment:not(.spam) .comment:not(.spam) .comment:not(.spam) .comment:not(.spam) .comment:not(.spam) .comment:not(.spam) .comment:not(.spam) .comment:not(.spam) { background-color: #999999!important; border-color: #222222!important; }
+
+html:not(.res-commentBoxes) .comments-page .comment:not(.spam) { background-color: #b3b3b3!important; border-color: #222222!important; }
+html:not(.res-commentBoxes) .comments-page .comment:not(.spam) .comment:not(.spam) { background-color: #999999!important; border-color: #222222!important; }
+html:not(.res-commentBoxes) .comments-page .comment:not(.spam) .comment:not(.spam) .comment:not(.spam) { background-color: #b3b3b3!important; border-color: #222222!important; }
+html:not(.res-commentBoxes) .comments-page .comment:not(.spam) .comment:not(.spam) .comment:not(.spam) .comment:not(.spam) { background-color: #999999!important; border-color: #222222!important; }
+html:not(.res-commentBoxes) .comments-page .comment:not(.spam) .comment:not(.spam) .comment:not(.spam) .comment:not(.spam) .comment:not(.spam) { background-color: #b3b3b3!important; border-color: #222222!important; }
+html:not(.res-commentBoxes) .comments-page .comment:not(.spam) .comment:not(.spam) .comment:not(.spam) .comment:not(.spam) .comment:not(.spam) .comment:not(.spam) { background-color: #999999!important; border-color: #222222!important; }
+html:not(.res-commentBoxes) .comments-page .comment:not(.spam) .comment:not(.spam) .comment:not(.spam) .comment:not(.spam) .comment:not(.spam) .comment:not(.spam) .comment:not(.spam) { background-color: #b3b3b3!important; border-color: #222222!important; }
+html:not(.res-commentBoxes) .comments-page .comment:not(.spam) .comment:not(.spam) .comment:not(.spam) .comment:not(.spam) .comment:not(.spam) .comment:not(.spam) .comment:not(.spam) .comment:not(.spam) { background-color: #999999!important; border-color: #222222!important; }
+html:not(.res-commentBoxes) .comments-page .comment:not(.spam) .comment:not(.spam) .comment:not(.spam) .comment:not(.spam) .comment:not(.spam) .comment:not(.spam) .comment:not(.spam) .comment:not(.spam) .comment:not(.spam) { background-color: #b3b3b3!important; border-color: #222222!important; }
+html:not(.res-commentBoxes) .comments-page .comment:not(.spam) .comment:not(.spam) .comment:not(.spam) .comment:not(.spam) .comment:not(.spam) .comment:not(.spam) .comment:not(.spam) .comment:not(.spam) .comment:not(.spam) .comment:not(.spam) { background-color: #999999!important; border-color: #222222!important; }
+html:not(.res-commentBoxes) .comments-page .comment .comment { border: solid 1px #222222; border-bottom: none; border-right: none; border-radius: 5px; }
+
+html:not(.res-commentBoxes) .sitetable.nestedlisting > .comment { border: solid 1px #222222; border-radius: 5px; margin-bottom: 5px; }
+
+html .messages-page .message { background-color: #999999!important; border-color: #222222!important; }
+html .messages-page .message .message { background-color: #b3b3b3!important; border-color: #222222!important; }
+html .messages-page .message .message .message { background-color: #999999!important; border-color: #222222!important; }
+html .messages-page .message .message .message .message { background-color: #b3b3b3!important; border-color: #222222!important; }
+html .messages-page .message .message .message .message .message { background-color: #999999!important; border-color: #222222!important; }
+html .messages-page .message .message .message .message .message .message { background-color: #b3b3b3!important; border-color: #222222!important; }
+html .messages-page .message .message .message .message .message .message .message { background-color: #999999!important; border-color: #222222!important; }
+html .messages-page .message .message .message .message .message .message .message .message { background-color: #b3b3b3!important; border-color: #222222!important; }
+html .messages-page .message .message .message .message .message .message .message .message .message { background-color: #999999!important; border-color: #222222!important; }
+html .messages-page .message .message .message .message .message .message .message .message .message .message { background-color: #b3b3b3!important; border-color: #222222!important; }
+html .messages-page .message .message .message .message .message .message .message .message .message .message .message { background-color: #999999!important; border-color: #222222!important; }
+html .messages-page .message .message .message .message .message .message .message .message .message .message .message .message { background-color: #b3b3b3!important; border-color: #222222!important; }
+html .messages-page .message .message .message .message .message .message .message .message .message .message .message .message .message { background-color: #999999!important; border-color: #222222!important; }
+html .messages-page .message .message .message .message .message .message .message .message .message .message .message .message .message .message { background-color: #b3b3b3!important; border-color: #222222!important; }
+html .messages-page .message .message .message .message .message .message .message .message .message .message .message .message .message .message .message { background-color: #999999!important; border-color: #222222!important; }
+html .messages-page .message .message .message .message .message .message .message .message .message .message .message .message .message .message .message .message { background-color: #b3b3b3!important; border-color: #222222!important; }
+html .messages-page .message .message .message .message .message .message .message .message .message .message .message .message .message .message .message .message .message { background-color: #999999!important; border-color: #222222!important; }
+html .messages-page .message .message .message .message .message .message .message .message .message .message .message .message .message .message .message .message .message .message { background-color: #b3b3b3!important; border-color: #222222!important; }
+html .messages-page .message .message .message .message .message .message .message .message .message .message .message .message .message .message .message .message .message .message .message { background-color: #999999!important; border-color: #222222!important; }
+html .messages-page .message .message .message .message .message .message .message .message .message .message .message .message .message .message .message .message .message .message .message .message { background-color: #b3b3b3!important; border-color: #222222!important; }
+html .messages-page .message .message .message .message .message .message .message .message .message .message .message .message .message .message .message .message .message .message .message .message .message { background-color: #999999!important; border-color: #222222!important; }
+html .messages-page .message .message .message .message .message .message .message .message .message .message .message .message .message .message .message .message .message .message .message .message .message .message { background-color: #b3b3b3!important; border-color: #222222!important; }
+html .messages-page .message .message .message .message .message .message .message .message .message .message .message .message .message .message .message .message .message .message .message .message .message .message .message { background-color: #999999!important; border-color: #222222!important; }
+html .messages-page .message .message .message .message .message .message .message .message .message .message .message .message .message .message .message .message .message .message .message .message .message .message .message .message { background-color: #b3b3b3!important; border-color: #222222!important; }
+html .messages-page .message .message .message .message .message .message .message .message .message .message .message .message .message .message .message .message .message .message .message .message .message .message .message .message .message { background-color: #999999!important; border-color: #222222!important; }
+html .messages-page .message .message .message .message .message .message .message .message .message .message .message .message .message .message .message .message .message .message .message .message .message .message .message .message .message .message { background-color: #b3b3b3!important; border-color: #222222!important; }
+html .messages-page .message .message .message .message .message .message .message .message .message .message .message .message .message .message .message .message .message .message .message .message .message .message .message .message .message .message .message { background-color: #999999!important; border-color: #222222!important; }
+html .messages-page .message .message .message .message .message .message .message .message .message .message .message .message .message .message .message .message .message .message .message .message .message .message .message .message .message .message .message .message { background-color: #b3b3b3!important; border-color: #222222!important; }
+html .messages-page .message .message .message .message .message .message .message .message .message .message .message .message .message .message .message .message .message .message .message .message .message .message .message .message .message .message .message .message .message { background-color: #999999!important; border-color: #222222!important; }
+html .messages-page .message .message .message .message .message .message .message .message .message .message .message .message .message .message .message .message .message .message .message .message .message .message .message .message .message .message .message .message .message .message { background-color: #b3b3b3!important; border-color: #222222!important; }
+html .messages-page .message .message .message .message .message .message .message .message .message .message .message .message .message .message .message .message .message .message .message .message .message .message .message .message .message .message .message .message .message .message .message { background-color: #999999!important; border-color: #222222!important; }
+html .messages-page .message .message .message .message .message .message .message .message .message .message .message .message .message .message .message .message .message .message .message .message .message .message .message .message .message .message .message .message .message .message .message .message { background-color: #b3b3b3!important; border-color: #222222!important; }
+html .messages-page .message .message .message .message .message .message .message .message .message .message .message .message .message .message .message .message .message .message .message .message .message .message .message .message .message .message .message .message .message .message .message .message .message { background-color: #999999!important; border-color: #222222!important; }
+html .messages-page .message .message .message .message .message .message .message .message .message .message .message .message .message .message .message .message .message .message .message .message .message .message .message .message .message .message .message .message .message .message .message .message .message .message { background-color: #b3b3b3!important; border-color: #222222!important; }
+html .messages-page .message .message .message .message .message .message .message .message .message .message .message .message .message .message .message .message .message .message .message .message .message .message .message .message .message .message .message .message .message .message .message .message .message .message .message { background-color: #999999!important; border-color: #222222!important; }
+html .messages-page .message .message .message .message .message .message .message .message .message .message .message .message .message .message .message .message .message .message .message .message .message .message .message .message .message .message .message .message .message .message .message .message .message .message .message .message { background-color: #b3b3b3!important; border-color: #222222!important; }
+
+html body.tb-mmp-thread .message-parent.threaded > .entry { border: none!important; }
+html body.tb-mmp-thread .message-parent.threaded .child > .sitetable > .thing:not(.spam) > .entry { background-color: #b3b3b3!important; border: none!important; }
+html body.tb-mmp-thread .message-parent.threaded .child .child > .sitetable > .thing:not(.spam) > .entry { background-color: #999999!important; border: none!important; }
+html body.tb-mmp-thread .message-parent.threaded .child .child .child > .sitetable > .thing:not(.spam) > .entry { background-color: #b3b3b3!important; border: none!important; }
+html body.tb-mmp-thread .message-parent.threaded .child .child .child .child > .sitetable > .thing:not(.spam) > .entry { background-color: #999999!important; border: none!important; }
+html body.tb-mmp-thread .message-parent.threaded .child .child .child .child.child > .sitetable > .thing:not(.spam) > .entry { background-color: #b3b3b3!important; border: none!important; }
+html body.tb-mmp-thread .message-parent.threaded .child .child .child .child .child .child > .sitetable > .thing:not(.spam) > .entry { background-color: #999999!important; border: none!important; }
+html body.tb-mmp-thread .message-parent.threaded .child .child .child .child .child .child.child > .sitetable > .thing:not(.spam) > .entry { background-color: #b3b3b3!important; border: none!important; }
+html body.tb-mmp-thread .message-parent.threaded .child .child .child .child .child .child .child .child > .sitetable > .thing:not(.spam) > .entry { background-color: #999999!important; border: none!important; }
+html body.tb-mmp-thread .message-parent.threaded .child .child .child .child .child .child .child .child .child > .sitetable > .thing:not(.spam) > .entry { background-color: #b3b3b3!important; border: none!important; }
+html body.tb-mmp-thread .message-parent.threaded .child .child .child .child .child .child .child .child .child .child > .sitetable > .thing:not(.spam) > .entry { background-color: #999999!important; border: none!important; }
+html body.tb-mmp-thread .message-parent.threaded .child .child .child .child .child .child .child .child .child .child .child > .sitetable > .thing:not(.spam) > .entry { background-color: #b3b3b3!important; border: none!important; }
+
+
+html .thing.message.spam, html body.messages-page .thing.message > .child > .sitetable > .thing.message.spam, html .child > .sitetable > .thing.message.spam > .entry { background-color: #f0a8a8!important; }
+
+body .sitetable.nestedlisting > .thing.spam { border-color: #222!important; }
+body .thing.approved, .thing.spam.approved, .thing.res-selected.approved, .thing.res-selected.spam.approved { background-color: #b9dab9!important; }
+html body .child > .sitetable.listing > .thing.spam, .thing.res-selected.spam, html .thing .entry.res-selected.tb-comment-spam { background-color: #f0a8a8!important; border-color: #222222!important; }
+body .thing.spammed, .thing.res-selected.spammed { background-color: #f86454!important; }
+body .thing.removed, .thing.spam.removed, .thing.res-selected.removed, .thing.res-selected.spam.removed { background-color: #d3d3d3!important; }
+body .thing.spam.comment > .child { background-color: #f0a8a8!important; }
+body .thing.spam.message > .child { background-color: #f0a8a8!important; }
+body .thing.comment:not(.spam) > .child { background-color: inherit!important; }
+body .thing.message.spam > .child > .sitetable > .thing.message:not(.spam) { background-color: #b3b3b3!important; }
+body .thing.message:not(.spam) > .child { background-color: inherit!important; }
+.res-commentBoxes .comment { border-color: #222!important; }
+
+body .thing.new.message { background-color: #808080!important; }
+body .thing.new.message > .entry { background-color: #808080!important; border: none; }
+
+body .thing.deleted.comment > .entry > .usertext > .usertext-body, .admin_takedown > .md { background-color: inherit!important; border: 1px solid #222!important; border-radius: 3px!important; }
+.admin_takedown { background-color: inherit!important; }
+body .thing.deleted.comment > .entry > .tagline > em { color: #222222; }
+
+body.comments-page > .content > .sitetable.linklisting > .thing.res-selected:not(.spam) { background-color: #b3b3b3!important; }
+
+.usertext.border .usertext-body { background-color: inherit; }
+
+.infobar, .reddit-infobar { background-color: #999999; border-color: #222222; color: #222222!important; }
+.infobar, .reddit-infobar a { color: #004880; }
+.infobar, .reddit-infobar { border-radius: 5px; }
+
+
+.commentarea .menuarea, .commentarea .menuarea * { color: #222222!important; }
+.commentarea .menuarea .drop-choices, .drop-choices.lightdrop, .drop-choices.srdrop, .tb-drop-choices { background-color: #808080; border-style: solid; border-color: #222222; border-width: 0px 1px 1px 1px; border: solid 1px #222; }
+html body .drop-choices.lightdrop form:first-of-type > a:first-of-type, html body .drop-choices.lightdrop > a:first-child, html body .tb-drop-choices > a:first-child { border-top: none!important; }
+html body .drop-choices.lightdrop > form > a > a { border-top: none!important; }
+.commentarea .menuarea .drop-choices a, .drop-choices.lightdrop a, .drop-choices.srdrop a, .tb-drop-choices a { border-top: solid 1px #222222; color: #222222; background-color: #808080; }
+.commentarea .menuarea .drop-choices a:hover, .drop-choices.lightdrop a:hover, .drop-choices.srdrop a:hover, .tb-drop-choices a.choice:hover { background-color: #595959; }
+#srList tr { background-color: #808080; color: #222222; }
+#srList tr:hover { background-color: #595959; }
+
+#header { border-bottom: 1px solid #222222; }
+#header-bottom-left { background-color: #595959; }
+#header-bottom-right { background-color: #808080; }
+#header-bottom-right a { color: #004880; }
+#header-bottom-left .tabmenu li a { background-color: #808080; padding-left: 7px; padding-right: 7px; }
+html #header-bottom-left .tabmenu li.selected a { color: #222222; border-top: solid 1px #222!important; border-left: solid 1px #222!important; border-right: solid 1px #222!important; border-bottom: none!important; }
+#header-bottom-left .tabmenu * { border-width: 1px 1px 0px 1px; border-radius: 10px 10px 0px 0px; border-color: #222222; }
+#sr-header-area, body.compose-page #sr-header-area { background-color: #b3b3b3; padding-bottom: 2px; }
+#sr-header-area a.RESShortcutsCurrentSub, #RESSubredditGroupDropdown .RESShortcutsCurrentSub a { font-weight: bold; color: #ff4500!important; }
+#RESShortcutsEditContainer, #RESShortcutsEditContainer *, body.compose-page #RESShortcutsEditContainer, body.compose-page #RESShortcutsEditContainer * { background-color: #cccccc; border-radius: 0px 0px 0px 7px; }
+
+.spacer form input, .searchpane form input { background-color: #595959; border-radius: 10px; color: #222222; }
+#searchexpando { background-color: #999999; border-color: #595959; border-width: 2px; border-radius: 8px; }
+#searchexpando label select { background-color: #808080; border-color: #595959; margin-bottom: 5px; margin-left: 5px; }
+#searchexpando a { color: #004880; }
+
+#link-desc, #text-desc { background-color: #999999; border-color: #595959; border-width: 2px; border-radius: 8px; }
+.roundfield, .linefield { background-color: #999999!important; border-color: #595959!important; border-width: 2px; border-radius: 8px; }
+.roundfield a, .linefield a { color: #004880; }
+.linefield span { color: #222222; }
+div.formtabs-content { border-top: 4px solid #595959; }
+.tabmenu.formtab li.selected a, .tabmenu li.selected a { background-color: #595959; padding: 5px 5px 0px 5px; bottom: 5px; }
+html .tabmenu.formtab li.selected a { border: none!important; }
+.tabmenu li.selected a { border: none; border-bottom: solid 1px #222222!important; color: #CCC; }
+.tabmenu.formtab li:not(.selected) a, .tabmenu li:not(.selected) a  { background-color: #808080; border: none; color: #222222; }
+.tabpane-content { border-top: solid 1px #222222!important; border: none; }
+
+div#new-link-image-input { background-color: #999999!important; border-color: #222222!important; border-radius: 10px; }
+div#new-link-image-input .file-drop-label { color: #222222!important; }
+div#new-link-image-input .file-upload-button { background-color: #595959!important; border-color: #222222!important; }
+div#image-name { background-color: #808080!important; border-width: 1px; border-radius: 8px; border-color: #222222; }
+.c-form-group .clear-input-button { background-color: #595959!important; padding-bottom: 1px; }
+.new-stamp { display: none; }
+
+.linkinfo { background-color: #999999; border-color: #595959; border-width: 2px; border-radius: 8px; }
+.linkinfo input { background-color: #808080; border: solid 1px #595959!important; border-radius: 4px!important; }
+
+.flairselector { background-color: #999999; border-color: #595959; box-shadow: 4px 4px 4px #999999; }
+.flairselector h2 { background-color: #808080; }
+
+.error, body.mod-toolbox-rd .tb-window-wrapper .tb-window-footer .tb-save-warning, .InfoBar__banText, .ThreadViewerReplyForm__errors { color: #990000; }
+
+.thumbnail { padding-bottom: 1px; margin-top: 5px; }
+
+.score.likes { color: #b33000!important; }
+.score.dislikes { color: #0000b3!important; }
+.score.unvoted { color: #222222!important; }
+
+.tb-hide-old.tb-general-button, html #REScommentSubToggle, html .tb-loadFlat.tb-general-button, html .sheets #tb-syntax-buttons a.tb-action-button.tb-syntax-button-preview, html .sheets #tb-syntax-buttons a.tb-action-button.tb-syntax-button-save, html input.save-new-reason.tb-action-button, html input.cancel-new-reason.tb-action-button, .tb-general-button, html body input.save-wiki-data.tb-action-button, html input#save-usernote-types.tb-action-button, html input.save-removal-settings.tb-action-button, html input.save-removal-sorting.tb-action-button, html input.save-new-macro.tb-action-button, html input.cancel-new-macro.tb-action-button, html input.import.tb-action-button, html input.save-ban-macro.tb-action-button, html input.save-edit-reason.tb-action-button, html input.cancel-edit-reason.tb-action-button, .flairselector button, .linefield-content button, .save-button button, .flair-entry button, html button.save-domain.tb-action-button, html button.clear-domain.tb-action-button, html input.domain-color, html button.save.tb-action-button.inline-button, html button.flair-save.tb-action-button, html button.message-send.tb-action-button, html input.utagger-save-user.tb-action-button, html .tb-sort-subs, html .no-reason.tb-action-button, html .save.tb-action-button, html .cancel.tb-action-button, p.nextprev a, html .tb-action-button.tb-syntax-button-save-wiki, html .tb-settings-export.tb-action-button, html .tb-settings-import.tb-action-button, html #showRawSettings, html .anonymize-settings.tb-action-button, html .tb-save.tb-action-button, html .remove-item.tb-action-button, html .add-item.tb-action-button, html .tb-action-button.tb-sample-sound, html body.mod-toolbox .tb-bracket-button, html .tb-action-button#save-personal-note, html #create-personal-note.tb-action-button, html form#tb-searchuser input.tb-action-button, html button#send, html .bottomButtons .blueButton, html input.wiki_button, html .wiki-page-content button, html li.create form button, html .save-selector input[type="submit"], html .tb-usertext-buttons button.save-mod.tb-action-button, html .tb-usertext-buttons button.save-sticky.tb-action-button, html .bottom-area .usertext-buttons button, html button.RESBigEditorPop, html div.spacer button.btn, html button.expand-summary, .markdownEditor .edit-btn, html .markdownEditor .edit-btn *, html button.btn, #tb-trouble-init.tb-action-button, html .tb-searchuser input[type="submit"], html .tb-submission-entry .tb-self-expando-button, html .nuke-button-popup .tb-execute-nuke.tb-action-button, html .nuke-button-popup .tb-retry-nuke.tb-action-button, .permission-selector .setpermissions button, #create-app-button, button[type=submit], #mod-matrix-settings input[type=submit], a.c-btn, button.s810vm8-0, .save-preferences, .btn[value="save options"], #color { background-color: #808080!important; color: #222222!important; border-style: solid!important; border-color: #222222!important; border-top-width: 1px!important; border-left-width: 1px!important; border-right-width: 1px!important; border-bottom-width: 2px!important; border-radius: 4px; }
+html .tb-hide-old.tb-general-button:active, html #REScommentSubToggle:active, html .tb-loadFlat.tb-general-button:active, html .sheets #tb-syntax-buttons a.tb-action-button.tb-syntax-button-preview:active, html .sheets #tb-syntax-buttons a.tb-action-button.tb-syntax-button-save:active, html input.save-new-reason.tb-action-button:active, html input.cancel-new-reason.tb-action-button:active, html .tb-general-button:active, html input.save-wiki-data.tb-action-button:active, html input#save-usernote-types.tb-action-button:active, html input.save-removal-settings.tb-action-button:active, html input.save-removal-sorting.tb-action-button:active, html input.save-new-macro.tb-action-button:active, html input.cancel-new-macro.tb-action-button:active, html input.import.tb-action-button:active, html input.save-ban-macro.tb-action-button:active, html input.save-edit-reason.tb-action-button:active, html input.cancel-edit-reason.tb-action-button:active, .flairselector button:active, .linefield-content button:active, .save-button button:active, .flair-entry button:active, html button.save-domain.tb-action-button:active, html button.clear-domain.tb-action-button:active, html input.domain-color:active, html button.save.tb-action-button.inline-button:active, html button.flair-save.tb-action-button:active, html button.message-send.tb-action-button:active, html input.utagger-save-user.tb-action-button:active, html .tb-sort-subs:active, html .no-reason.tb-action-button:active, html .save.tb-action-button:active, html .cancel.tb-action-button:active, p.nextprev a:active, html .tb-action-button.tb-syntax-button-save-wiki:active, html .tb-settings-export.tb-action-button:active, html .tb-settings-import.tb-action-button:active, html #showRawSettings:active, html .anonymize-settings.tb-action-button:active, html .tb-save.tb-action-button:active, html .remove-item.tb-action-button:active, html .add-item.tb-action-button:active, html .tb-action-button.tb-sample-sound:active, html body.mod-toolbox .tb-bracket-button:active, html .tb-action-button#save-personal-note:active, html #create-personal-note.tb-action-button:active, form#tb-searchuser input.tb-action-button:active, button#send:active, .bottomButtons .blueButton:active, input.wiki_button:active, .wiki-page-content button:active, li.create form button:active, .save-selector input[type="submit"]:active, .tb-usertext-buttons button.save-mod.tb-action-button:active, .tb-usertext-buttons button.save-sticky.tb-action-button:active, .bottom-area .usertext-buttons button:active, button.RESBigEditorPop:active, div.spacer button.btn:active, button.expand-summary:active, .markdownEditor .edit-btn:active, .markdownEditor .edit-btn *:active, button.btn:active, #tb-trouble-init.tb-action-button:active, html .tb-searchuser input[type="submit"]:active, html .tb-submission-entry .tb-self-expando-button:active, html .tb-popup.nuke-button-popup .tb-execute-nuke.tb-action-button:active, html .tb-popup.nuke-button-popup .tb-retry-nuke.tb-action-button:active, .permission-selector .setpermissions button:active, #create-app-button:active, button[type=submit]:active, #mod-matrix-settings input[type=submit]:active, a.c-btn:active, button.s810vm8-0:active, .save-preferences:active, .btn[value="save options"]:active, #color:active { border-bottom: solid 1px #222222!important; transform: translateY(1px)!important; border-color: #222222!important; }
+html body input.save-new-reason.tb-action-button:hover, html input.cancel-new-reason.tb-action-button:hover, html body input.save-wiki-data.tb-action-button:hover, html input#save-usernote-types.tb-action-button:hover, html input.save-removal-settings.tb-action-button:hover, html input.save-removal-sorting.tb-action-button:hover, html input.save-new-macro.tb-action-button:hover, html input.cancel-new-macro.tb-action-button:hover, html input.import.tb-action-button:hover, html input.save-ban-macro.tb-action-button:hover, html input.save-edit-reason.tb-action-button:hover, html input.cancel-edit-reason.tb-action-button:hover, html button.save-domain.tb-action-button:hover, html .tb-popup.dtagger-popup div.tb-popup-footer div button.clear-domain.tb-action-button:hover, html input.domain-color:hover, html button.save.tb-action-button.inline-button:hover, html button.flair-save.tb-action-button:hover, html button.message-send.tb-action-button:hover, html input.utagger-save-user.tb-action-button:hover, html .tb-sort-subs:hover, html .no-reason.tb-action-button:hover, html .save.tb-action-button:hover, html .cancel.tb-action-button:hover, p.nextprev a:hover, html .tb-action-button.tb-syntax-button-save-wiki:hover, html .tb-settings-export.tb-action-button:hover, html .tb-settings-import.tb-action-button:hover, html #showRawSettings:hover, html .anonymize-settings.tb-action-button:hover, html .tb-save.tb-action-button:hover, html .remove-item.tb-action-button:hover, html .add-item.tb-action-button:hover, html .tb-action-button.tb-sample-sound:hover, html body.mod-toolbox .tb-bracket-button:hover, html .tb-action-button#save-personal-note:hover, html #create-personal-note.tb-action-button:hover, form#tb-searchuser input.tb-action-button:hover, button#send:hover, .bottomButtons .blueButton:hover, input.wiki_button:hover, .wiki-page-content button:hover, li.create form button:hover, .save-selector input[type="submit"]:hover, .tb-usertext-buttons button.save-mod.tb-action-button:hover, .tb-usertext-buttons button.save-sticky.tb-action-button:hover, #tb-trouble-init.tb-action-button:hover, html .tb-searchuser input[type="submit"]:hover, html .tb-submission-entry .tb-self-expando-button:hover, html .tb-popup.nuke-button-popup .tb-execute-nuke.tb-action-button:hover, html .tb-popup.nuke-button-popup .tb-retry-nuke.tb-action-button:hover, .permission-selector .setpermissions button:hover, #create-app-button:hover, button[type=submit]:hover, #mod-matrix-settings input[type=submit]:hover, a.c-btn:hover, button.s810vm8-0:hover, save-preferences:hover, .btn[value="save options"]:hover, #color:hover { background-color: #808080!important; }
+html .tb-icons { color: #222!important; }
+html body.mod-toolbox .tb-action-button { border-radius: 4px!important; }
+html body.tb-bracket-button.tb-add-removal-reason { margin-bottom: 1px; }
+html #tb-syntax-buttons .tb-action-button { padding-top: 3px!important; padding-bottom: 3px!important; }
+body.mod-toolbox-rd .tb-general-button, body.mod-toolbox-rd li a.tb-general-button, body.mod-toolbox-rd .tb-bracket-button { margin: 0px 1px 0px 1px!important; }
+body.mod-toolbox-rd .content .user-history-button { margin: 0!important; }
+body #tb-trouble-buttons .tb-action-button { margin-bottom: 3px!important; }
+html body.mod-toolbox .tb-bracket-button.tb-show-action-table { line-height: 10px!important; margin-top: 2px!important; }
+html body.mod-toolbox .tb-bracket-button.tb-show-action-table:active { margin-bottom: 2px!important; }
+
+textarea, input#url, input#sr-autocomplete, input#header-title, input#comment_score_hide_mins, input#wiki_edit_age, input#wiki_edit_karma, input#submit_link_label, input#submit_text_label, input#title.text, .c-form-control.text-counter-input, html input.multi-name, input#flair_jump_name, .flaircell input, html input.domain-name, html input#ban-note, html input.ban-duration, html input#flair-text, html input#flair-class, html input#subreddit-message-subject, html input.utagger-user-note, input#modtab-threshold, input#name, .fieldPair input, input#wiki_revision_reason, html input#tb-livefilter-input, html input#tb-new-personal-note, input#subredditsearch, input#contentsearch, .roundfield-content input, #WikiAllowEditor input, .add-sr input.sr-name, input.savedcategory, #quickMessage form[name="quickMessageDialogForm"] input[type="text"], .customizer.texteditable input, .crosspost-fieldset .crosspost-field.crosspost-title, .report-reason-display input.other-reason-text, .reason > .styled-reason > p > input, input.text, #mod-matrix-settings input[type=date], #mod-matrix-settings input[type=number], .roundfield-content input[type=password], .pretty-form input[type="text"], .pretty-form input[type="number"], .NewThread__subject, .NewThread__username, #srList input, .helpcenter-form input[type="text"] { background-color: #808080!important; border-radius: 8px; border-color: #222222!important; border-width: 1px; padding: 3px; }
+.RESCharCounter { color: #222222!important; }
+.submit textarea { border: solid 1px #222222!important; border-color: #222222!important; }
+input[type="number"].ban-duration.tb-input { width: 90px!important; }
+
+.tb-popup input.flair-text.tb-input { margin-left: 4px!important; }
+.tb-popup input.flair-class.tb-input { margin-left: 2px!important; }
+
+.bottom-area .error { color: #990000; }
+.bottom-area a.reddiquette, a.option.active { color: #004880; }
+.RESMacroDropdownTitle { color: #222222; }
+.RESMacroDropdownTitle.openMacro { background-color: #999999; border-radius: 2px; }
+.RESMacroDropdown { border: none; }
+.RESMacroDropdownList { background-color: #808080; border-style: solid; border-color: #222222; border-width: 0px 1px 1px 1px; }
+.RESMacroDropdownList a { border-top: solid 1px #222222; border-bottom: none!important; border-left: none; border-right: none; color: #222222; }
+.RESMacroDropdownList a:hover { background-color: #595959!important; }
+
+.gold-accent { background-color: #999999; border-color: #222222; color: #222222; }
+select#comment-visits { background-color: #808080; border-color: #222222; }
+span.karma { color: #222222!important; }
+
+#BigEditor .BELeft, #BigEditor .BERight { background-color: #999999; border-color: #222222; }
+#BigEditor h3 { background-color: #808080; border-bottom: 1px solid #222222; }
+#BigEditor .BELeft .commentingAs { color: #222222; }
+#BigEditor .BEFoot button { background-color: #808080; border: solid 1px #222222; border-radius: 2px; }
+
+.RESDialogSmall.livePreview { background-color: #999999; border-color: #222222; border-radius: 3px; margin-top: 2px; }
+.RESDialogSmall.livePreview > h3 { background-color: #808080; border-bottom: 1px solid #222222; }
+
+table * { border-color: #222222!important; }
+
+#tb-bottombar { background-color: #999999!important; border-color: #222222!important; }
+#tb-bottombar a#tb-toolbar-mysubs, #tb-bottombar a#tb-personal-notes-button, #tb-bottombar a#tb-old-new-reddit-toggle { background-color: #808080!important; border-style: solid; border-color: #222222!important; color: #222222!important; border-top-width: 0px; }
+#tb-bottombar #tb-toggle-removed, #tb-bottombar #tb-toolbarcounters a.tb-toolbar { color: #222222!important; }
+
+.collapse-button { background-color: #595959!important; border-color: #222222!important; }
+
+.footer-parent a { color: #004880; font-weight: normal; }
+.footer.rounded { background-color: #999999; border-color: #222222; }
+.footer.rounded .col { border-color: #222222; }
+.flat-vert { color: #222222!important; }
+.footer-parent .bottommenu { color: #222222!important; }
+
+.flair, .linkflairlabel { background-color: #808080; border-color: #222222; color: #222222; }
+
+li.flairsample-right, li.flairsample-left { border-color: #222222; padding: 1px; border-radius: 2px; margin-top: 2px; }
+
+li.reported-stamp, .report-reasons, .tb-user-reports { background-color: #999999!important; }
+.report-reasons { border-width: 1.5px!important; }
+.tb-user-reports { border-left: none!important; border-bottom: none!important; border-radius: 0px 5px 0px 0px; border-width: 2px; }
+
+span.big-mod-buttons span.radiogroup a.pretty-button.access-required.negative { background-color: #a65959!important; }
+
+.res-commentNavToggle-choices { background-color: #999999!important; box-shadow: 4px 4px 4px #999999; }
+.res-commentNavToggle-choices .res-commentNavToggle-type { color: #222222!important; }
+
+.sidecontentbox .content, .sidecontentbox .content p, .sidecontentbox .content a, .sidecontentbox .content span { background-color: #999999; }
+
+.server-seconds { background-color: #999999; border-color: #222222; }
+
+span.user { color: #222222; }
+.userkarma a { color: #222222!important; }
+
+.sheets .col div input, input#img-name, .tb-window-content input { padding-left: 4px; background-color: #808080!important; border-radius: 8px!important; border-color: #222222!important; border-width: 1px!important; }
+input#img-name { margin-left: 2px; }
+div#images h2 a { color: #222222; }
+input#file { background-color: #595959; border: solid 1px #222222; border-radius: 6px; margin-bottom: 4px; }
+button#submit-img { background-color: #808080; border: solid 1px #222222; border-radius: 4px; margin-left: 2px; padding-top: 3px; color: #222222; }
+
+button#submit-img { background-color: #808080!important; border-top: solid 1px #222222!important; border-left: solid 1px #222222!important; border-right: solid 1px #222222!important; border-bottom: solid 2px #222222!important; border-radius: 2px!important; }
+button#submit-img:active { border-bottom: solid 1px #222222!important; transform: translateY(1px); }
+
+#tb-flatview-search { background-color: #999999!important; border-color: #222222!important; color: #222222!important; border-radius: 10px!important; }
+#tb-flatview-search-count { background-color: #808080!important; border: solid 1px #222222!important; color: #222222!important; }
+#tb-flatview-search input { background-color: #808080!important; border-radius: 8px!important; border-color: #222222!important; border-width: 1px!important; padding: 2px 2px 2px 4px; }
+input::placeholder, textarea::placeholder { color: #404040!important; }
+
+.RESCloseButton { background-color: #595959!important; border-color: #222222!important; color: #222222!important; }
+.RESCloseButton:hover { background-color: #505050!important; border-color: #222222!important; }
+
+#RESStyleSheetTipPane-header { border-bottom: none; }
+#RESStyleSheetTipPane { border-color: #222222; background-color: #808080; }
+#theme_selector { background-color: #808080; border-color: #595959; margin-bottom: 5px; margin-left: 5px; }
+div.tb-syntax-keyboard { background-color: #595959!important; opacity: 0.8; font-weight: bold; }
+div.tb-syntax-keyboard li { font-weight: bold; font-size: 12px; }
+
+.RESNotification { background-color: #999999!important; color: #222222; }
+label.RESNotificationToggle { color: #222222; }
+
+select.nomargin, select#lang { background-color: #808080; border-color: #595959; margin-bottom: 5px; margin-left: 5px; }
+
+.form-inputs .md * { color: #222222!important; }
+button.subreddit-rule-edit-button { color: #004880!important; }
+.subreddit-rule-label, .subreddit-rule-kind { color: #222222!important; }
+html .subreddit-rule-item:hover { background-color: #999999!important; border-radius: 10px!important; }
+
+.reason-popup-innercontent { background-color: #999999!important; }
+.reason-popup .selectable-reason.reason-selected { background-color: #808080!important; }
+.reason-popup .selectable-reason.reason-selected .styled-reason { background-color: inherit!important; }
+a.mte-thread-link { color: #004880!important; }
+.reason-popup-header, .reason-popup-footer { background-color: #808080!important; }
+.reason-popup-footer { padding-bottom: 5px!important; }
+
+#tb-add-removal-reason-form input { background-color: #808080; border-radius: 8px; border-color: #222222; border-width: 1px; padding-left: 2px; }
+
+html .tb-window-wrapper, .tb-window-content { background-color: #999999!important; }
+.tb-window-footer, html .tb-window-header { background-color: #808080!important; }
+.tb-window-footer { border-top: solid 1px #222222!important; }
+.tb-window-header { border-bottom: solid 1px #222222!important; }
+html .tb-window-header { padding-bottom: 1px; }
+div.buttons a.close, div.buttons a.tb-help-main { background-color: #808080!important; color: #222222!important; }
+a.close { border-radius: 0px 4px 0px 0px; }
+
+body .tb-window-tabs a { background-color: #808080!important; border-right: 1px solid #222; }
+html body .tb-window-tabs a.active, html body .tb-window-tabs a:hover { background-color: #595959!important; }
+.tb-window-tabs a { border-color: #222222!important; }
+html body .tb-window-tabs a[data-module="gensettings"].active ~ a.about, html body .tb-window-tabs a[data-module="usernotes"].active ~ a.about, html body .tb-window-tabs a[data-module="rreasons"].active ~ a.about, html body .tb-window-tabs a[data-module="profile"].active ~ a.about, html body .tb-window-tabs a[data-module="pnotes"].active ~ a.about, html body .tb-window-tabs a[data-module="notifier"].active ~ a.about, html body .tb-window-tabs a[data-module="newmodmail"].active ~ a.about, html body .tb-window-tabs a[data-module="modbar"].active ~ a.about, html body .tb-window-tabs a[data-module="modbutton"].active ~ a.about, html body .tb-window-tabs a[data-module="hbutton"].active ~ a.about, html body .tb-window-tabs a[data-module="dtagger"].active ~ a.about, html body .tb-window-tabs a[data-module="devtools"].active ~ a.about, html body .tb-window-tabs a[data-module="comments"].active ~ a.about, html body .tb-window-tabs a[data-module="commentnuke"].active ~ a.about, html body .tb-window-tabs a[data-module="bbuttons"].active ~ a.about, html body .tb-window-tabs a[data-module="banlist"].active ~ a.about, html body .tb-window-tabs a[data-module="toolbox"].active ~ a.about, html body .tb-window-tabs a[data-module="trouble"].active ~ a.about { border-bottom: none!important; }
+html body .tb-window-tabs a[data-module="edit_toolbox_config"].active ~ a.ban_macro, html body .tb-window-tabs a[data-module="edit_user_notes"].active ~ a.ban_macro, html body .tb-window-tabs a[data-module="edit_automoderator_config"].active ~ a.ban_macro { border-bottom: 1px solid #222!important; }
+
+.dropdown.lightdrop .selected, .tb-dropdown.lightdrop .selected { color: #222222; }
+
+.multi-selector { background-color: #999999; box-shadow: 0 0; border-radius: 8px; border: solid 1px #222222; }
+.multi-selector::before, .multi-selector::after { display: none; }
+html body .hover-bubble.multi-selector label a { background-color: #595959!important; color: #222222!important; border-color: #222222!important; }
+html body .hover-bubble.multi-selector label:hover { background-color: #808080!important; }
+
+.linefield-content button { margin-left: 4px; bottom: 1px; padding-top: 3px; }
+
+.clearflairtemplates-button { background-color: #999999!important; border-color: #222222!important; border-radius: 7px!important; }
+.clearflairtemplates-button * { border-color: #222222!important; color: #004880!important; }
+
+html .tb-popup { border: solid 1px #222222!important; border-radius: 5px!important; }
+.tb-popup .tb-popup-content { background-color: #999999; }
+.tb-popup .tb-popup-header, .tb-popup .tb-popup-footer { background-color: #808080!important; }
+.tb-popup .tb-popup-header { border-bottom: solid 1px #222; border-radius: 4px 4px 0px 0px; }
+.tb-popup .tb-popup-footer { border-top: solid 1px #222; border-radius: 0px 0px 4px 4px; }
+.tb-popup.mod-popup .tb-popup-header { border-bottom: none!important; }
+
+html .tb-popup-tabs { background-color: #808080!important; border-color: #222!important; }
+.tb-popup-tabs a { border-color: #222!important; }
+.tb-popup-tabs a:not(.active) { background-color: #808080!important; color: #222!important; }
+html .tb-popup-tabs a.active, html .tb-popup-tabs a:not(.active):hover { background-color: #595959!important; color: #222!important; border-color: #222!important; }
+
+html select.other-sub.tb-action-button.inline-button, html div.tb-popup-footer select.mod-action.tb-action-button, html .selector.tb-action-button, .roundfield-content select, .save-selector select, html select.tb-top-macro-select.tb-action-button, html .tb-prune-length, #REScommentNavBox select#commentNavBy, #quickMessage select#quickMessageDialogFrom, .tb-usertext-buttons .tb-macro-select.tb-action-button, .crosspost-fieldset select#sr, .styled-reason.reason-content #contextSelectbox, .pretty-form select { background-color: #808080!important; border-color: #595959!important; color: #222222!important; }
+html div.tb-popup-footer select.mod-action.tb-action-button option, html .selector.tb-action-button option, html .selector.tb-action-button option, html .selected-list.tb-action-button, html .selected-list.tb-action-button option, html .available-list.tb-action-button, html .available-list.tb-action-button option, .roundfield-content select option, .save-selector select option, html select.tb-top-macro-select.tb-action-button option, html .tb-prune-length option, #REScommentNavBox select#commentNavBy option, #quickMessage select#quickMessageDialogFrom option, .tb-usertext-buttons .tb-macro-select.tb-action-button option, .crosspost-fieldset select#sr option, .styled-reason.reason-content #contextSelectbox option, .pretty-form select option { background-color: #808080!important; border-color: #222222!important; color: #222222!important; }
+html .selector.tb-action-button:hover, html .selected-list.tb-action-button:hover, html .available-list.tb-action-button:hover, html select.tb-top-macro-select.tb-action-button:hover, html .tb-prune-length:hover, #REScommentNavBox select#commentNavBy:hover, #quickMessage select#quickMessageDialogFrom:hover, .tb-usertext-buttons .tb-macro-select.tb-action-button:hover, .crosspost-fieldset select#sr:hover, .styled-reason.reason-content #contextSelectbox:hover, .pretty-form select:hover { background-color: #808080!important; }
+html select.other-sub.tb-action-button.inline-button:active, html div.tb-popup-footer select.mod-action.tb-action-button:active, html .selector.tb-action-button:active, html .selected-list.tb-action-button:active, html .available-list.tb-action-button:active, html select.tb-top-macro-select.tb-action-button:active, html .tb-prune-length:active, #REScommentNavBox select#commentNavBy:active, #quickMessage select#quickMessageDialogFrom:active, .tb-usertext-buttons .tb-macro-select.tb-action-button:active, .crosspost-fieldset select#sr:active, .styled-reason.reason-content #contextSelectbox:active, .pretty-form select:active { border-color: #222222!important; }
+
+.tb-popup .tb-popup-tabs a, .tb-popup-tabs a:hover, .tb-popup-tabs a.active { box-shadow: 0 0!important; }
+
+.utagger-popup .utagger-type span:hover, .utagger-popup .utagger-type span:active, .utagger-popup .utagger-type input:checked ~ span { background-color: #808080!important; }
+
+.history-table-wrapper tbody tr td { background-color: #808080; border-left: none; border-right: dotted 1px #222222; }
+.history-table-wrapper thead tr th { background-color: #595959; border-color: #222222; }
+.history-table-wrapper .table a { color: #222244; font-weight: bold; }
+.history-table-wrapper .table { border: solid 1px #222222!important; }
+.history-table-wrapper tbody tr th.url-td { border-left: none; }
+.history-table-wrapper tbody tr td.url-td { background-color: #808080!important; }
+html div.tb-popup-content div p.tb-history-disclaimer { background-color: #999999!important; border: solid 1px #222222!important; border-radius: 5px!important; }
+
+.menuarea.modtools { background-color: #999999!important; border: solid 1px #222222!important; border-radius: 8px; }
+.menuarea.modtools .dropdown-title { margin-top: 10px; }
+
+li div.description a { line-height: 30px; }
+li div.description form.toggle.delete_sr_img-button span a.togglebutton { line-height: 5px; }
+
+.new-comment .usertext-body { background-color: inherit; border: none; }
+
+.RESHover { border: solid 1px #222222!important; border-radius: 5px!important; background-color: #999999!important; }
+.RESHover .RESHoverTitle { background-color: #808080; border-bottom: solid 1px #222222; }
+.RESHover li:hover, .RESHover li a:hover, .RESHover span.res-icon:hover { background-color: #808080!important; }
+.RESHover::before, .RESHover::after { display: none!important; }
+.RESHover a { color: #004880; }
+select#userTaggerColor { color: #222222; background-color: #808080; }
+input#userTaggerSave { background-color: #488448!important; border-bottom: solid 2px #020!important; border-left: solid 1px #020!important; border-top: solid 1px #020!important; border-right: solid 1px #020!important; }
+input#userTaggerSave:active { border-bottom: solid 1px #020!important; top: 1px!important; transform: translateY(1px); }
+input#userTaggerSave:hover { background-color: #366336!important; }
+
+.subscription-box span.fancy-toggle-button.subscribe-button .option.add { position: relative; visibility: hidden; border-bottom: solid 2px #020; background-color: #488448; }
+.subscription-box span.fancy-toggle-button.subscribe-button .option.add:before { background-color: inherit; content: "subscribe"; visibility: visible; font-size: 10px; color: #FFFFFF; border-bottom: inherit; border-left: solid 1px #020; border-top: solid 1px #020; border-right: solid 1px #020; padding-left: 17px; padding-right: 17px; border-radius: 14px; padding-top: 2px; padding-bottom: 2px; }
+.subscription-box span.fancy-toggle-button.subscribe-button .option.add:active { border-bottom: solid 1px #020; top: 1px; }
+.subscription-box span.fancy-toggle-button.subscribe-button .option.add:hover { background-color: #366336; }
+
+.subscription-box span.fancy-toggle-button.subscribe-button .option.remove { position: relative; visibility: hidden; border-bottom: solid 2px #200; background-color: #990000; }
+.subscription-box span.fancy-toggle-button.subscribe-button .option.remove:before { background-color: inherit; content: "unsubscribe"; visibility: visible; font-size: 10px; color: #FFFFFF; border-bottom: inherit; border-left: solid 1px #200; border-top: solid 1px #200; border-right: solid 1px #200; padding-left: 10px; padding-right: 10px; border-radius: 14px; padding-top: 2px; padding-bottom: 2px; }
+.subscription-box span.fancy-toggle-button.subscribe-button .option.remove:active { border-bottom: solid 1px #200; top: 1px; }
+.subscription-box span.fancy-toggle-button.subscribe-button .option.remove:hover { background-color: #800000; }
+
+html .subscription-box li .subscribe-button~.title { font-size: 12px!important; color: #004880; margin-left: -20px!important; }
+body .subscription-box ul .title { color: #004880; }
+html body .subscription-box ul .subscribe-button~a.title[href*="/user/"] { margin-left: -20px!important; }
+html body .subscription-box ul li .subscribe-button { width: 120px!important; }
+
+.subreddit .entry .tagline .score * { color: #222222; }
+
+.clear .fancy-toggle-button .banned { margin-left: 7px; font-size: 10px; padding-left: 24px; padding-right: 23px; padding-top: 2px; padding-bottom: 2px; border-radius: 14px; color: #737373; width: 140px!important; background-color: #b3b3b3!important; }
+.clear .title.banned { margin-left: 1px!important; font-size: 12px!important; }
+
+.NERPageMarker, #progressIndicator { background-color: #808080; border-color: #222; }
+.NERPageMarker, .NERPageMarker *, #progressIndicator * { color: #222222; }
+
+a.tb-subreddit-item-count { background-color: #808080!important; border: solid 1px #222222; border-radius: 4px; color: #222222!important; }
+
+form#subreddit_stylesheet h2 { color: #222222; }
+
+select.compose-mail.tb-action-button.inline-button, select.switch-mail.tb-action-button.inline-button { background-color: #808080!important; border-color: #595959!important; color: #222222!important; }
+select.compose-mail.tb-action-button.inline-button option, select.switch-mail.tb-action-button.inline-button option { background-color: #808080!important; }
+
+.correspondent { background-color: #595959!important; border-color: #222222!important; }
+.correspondent, .correspondent * { color: #222222!important; }
+body .recipient a.author:not(.moderator, .admin, .alum) { color: #222222!important; }
+
+#tb-feedback-window, #tb-loading-stuff { background-color: #595959!important; box-shadow: none!important; }
+#tb-feedback-window .tb-feedback-text, #tb-loading-stuff .tb-loading-content { background-color: #808080!important; }
+
+html .masstagger a, html .masstagger { background-color: #990000!important; padding: 1px 3px 1px 3px!important; border-radius: 8px!important; }
+
+.pageactions { border-color: #222222!important; }
+.wikiaction:not(.wikiaction-current) { color: #222222!important; }
+.wikiaction.wikiaction-current { background-color: #595959!important; }
+.wikiaction:not(.wikiaction-current):hover { background-color: #808080!important; }
+.wiki-page .wikititle { color: #222222; }
+.wiki-page-content #editform { width: 95%; }
+
+.RESDropdownOptions * { color: #222222!important; border-color: #222222!important; }
+
+body .tb-window-tabs a { color: #222222!important; }
+
+a.tb-help-toggle { color: #004880!important; }
+
+.tb-about-credits a { color: #004880; }
+
+html .tb-window-content h3, html .tb-window-content p { border-color: #222222!important; }
+html .tb-window-tabs a.about { border-bottom: solid 1px #222222!important; }
+
+body .achievements .achievement { border-color: #222222!important; }
+body .achievements .achievement * { color: #222222!important; }
+body .achievements .achievement.unlocked { background-color: #999999!important; }
+body .achievements .achievement:not(.unlocked) { background-color: #808080!important; }
+body .achievements .achievement a { color: #004880!important; }
+
+p.title a.title { color: #004880; }
+
+html #tb-personal-notes-listing, html #tb-new-personal-note-div { background-color: #808080!important; }
+html #tb-personal-notes-listing { border-right: solid 1px #222!important; }
+html #tb-personal-notes-listing * { border-color: #222!important; }
+html #tb-personal-notes-listing .tb-personal-note-link  { color: #004880!important; }
+
+html #tb-tooltip { background-color: #595959!important; opacity: 0.9; font-weight: bold; border-color: #222222!important; box-shadow: none; }
+html #tb-tooltip * { color: #222222!important; }
+html #tb-bottombar-hidden { background-color: #999999!important; border-color: #222!important; }
+
+.profile-page .thing { padding-left: 10px!important; }
+
+#tb-search-suggest { border-color: #222222!important; }
+table#tb-search-suggest-list tr { background-color: #808080!important; }
+table#tb-search-suggest-list tr:hover { background-color: #595959!important; }
+table#tb-search-suggest-list tr td { color: #222222!important; }
+
+select.rule_subject { margin-bottom: 5px!important; }
+
+html body span .pretty-button.action { border-radius: 3px!important; }
+body .pretty-button.action.positive { border-left: solid 2px #040!important; border-bottom: solid 2px #040!important; border-top: solid 1px #040!important; border-right: solid 1px #040!important; }
+html body .pretty-button.action.positive:active { border-left: solid 1px #040!important; border-bottom: solid 1px #040!important; }
+body .pretty-button.action.neutral { border-left: solid 2px #444!important; border-bottom: solid 2px #444!important; border-top: solid 1px #444!important; border-right: solid 1px #444!important; }
+html body .pretty-button.action.neutral:active { border-left: solid 1px #444!important; border-bottom: solid 1px #444!important; }
+body .pretty-button.action.negative { border-left: solid 2px #400!important; border-bottom: solid 2px #400!important; border-top: solid 1px #400!important; border-right: solid 1px #400!important; }
+html body .pretty-button.action.negative:active { border-left: solid 1px #400!important; border-bottom: solid 1px #400!important; }
+
+.helplink { line-height: 10px; }
+
+.fieldPair div { color: #222222!important; }
+
+.commentarea .infobar a { color: #004880; }
+
+body .side .flair { white-space: normal; }
+
+.flair span { background-color: inherit!important; }
+
+.side .spacer .sidecontentbox ul.content li { margin-bottom: 3px; }
+
+#tb-new-modmail-tooltip, #tb-modbar-hide-tooltip { background-color: #808080!important; border-color: #909090!important; box-shadow: none!important; }
+#tb-new-modmail-tooltip .tb-new-mm-count, #tb-modbar-hide-tooltip * { color: #222222!important; }
+#tb-new-modmail-tooltip .tb-new-mm-category a { color: #004880!important; }
+
+body:not(.res) .titlebox span.subscribers { display: block!important; }
+
+.redesign-beta-optin { display: none; }
+
+#sr-more-link { color: #222222; background-color: #808080; border-radius: 0px 0px 0px 5px; border: solid 1px #222; border-top: none; border-right: none; }
+
+.wiki-page .wiki-page-content .wikirevisionlisting .generic-table { width: 90%; }
+.wiki-page .wiki-page-content #wiki_revision_reason { width: 90%; }
+
+.wiki-page-content .RESDialogSmall.livePreview { margin-top: 25px; }
+.wiki-page-content .RESDialogSmall.livePreview .gearIcon { bottom: 40px; }
+
+.wiki-page-content a { color: #004880; }
+
+body.with-listing-chooser .listing-chooser { background-color: #999999; }
+body.with-listing-chooser .listing-chooser .grippy { background-color: #595959; background: #595959; border-color: #222222; }
+body.with-listing-chooser .listing-chooser .grippy:after { border-color: #222222; }
+body.with-listing-chooser .listing-chooser .grippy:hover:before { background-color: #595959; border-color: #222222; }
+body.with-listing-chooser .listing-chooser .grippy:hover:after { background-color: #595959; border-color: #222222; }
+body.with-listing-chooser .listing-chooser .contents h3 { color: #222222; }
+body.with-listing-chooser .listing-chooser .contents ul li { background-color: #808080; border-color: #222222; }
+body.with-listing-chooser .listing-chooser .contents ul li.selected { background-color: #999999; box-shadow: none; }
+body.with-listing-chooser .listing-chooser .contents ul li.selected::before { border-left-color: #595959; }
+body.with-listing-chooser .listing-chooser .contents ul li .description { color: #222222; }
+body.with-listing-chooser .listing-chooser .contents ul li a { color: #004880; }
+
+.trending-subreddits .trending-subreddits-content strong { color: #002000; }
+.trending-subreddits .trending-subreddits-content > a { color: #595959; }
+
+html body .thing ul, html body .thing ol, html body .thing h1, html body .thing h2, html body .thing h3, html body .thing h4, html body .thing h5, html body .thing h6, html body .thing td, html body .thing th { color: #222222; }
+
+.crosspost-preview { background-color: #808080; border-color: #222222; }
+.crosspost-preview .crosspost-preview-tagline, .crosspost-preview-tagline a.comments, .crosspost-preview-tagline .dot { color: #222222; }
+.crosspost-preview .crosspost-preview-header { border-bottom: solid 1px #222; }
+.crosspost-preview.video .crosspost-preview-content { background-color: #999; }
+.crosspost-preview.selftext { max-width: 862px; }
+
+hr.self-divider { visibility: hidden; }
+
+.nextprev { color: #222222; }
+.nextprev .separator { border-color: #222222; }
+.nextprev .prev-button a, .nextprev .next-button a { background-color: #808080; color: #222222; border-color: #222222; }
+
+#tb-metrics-expand-list, #tb-metrics-expand-list * { border-color: #222!important; color: #004880!important; }
+#tb-metrics-expand-list li { background-color: #808080!important; }
+#tb-metrics-expand-list li:hover { background-color: #595959!important; }
+
+.save-selector { background-color: #999999; border-color: #222; border-radius: 5px; }
+.save-selector:after, .save-selector:before { display: none; }
+
+.tagline .subreddit-subscribe:hover~.subreddit { color: #020; }
+button.subreddit-subscribe:hover { color: #020!important; }
+
+.linefield-content .delete-field .gray { color: #222; }
+.linefield-content .delete-field .disabled { color: #444; }
+
+.RESUserTagImage::after { color: #222!important; margin-right: 5px; }
+
+body .tb-highlight { background-color: #599!important; }
+
+body .RES-dropdown-button { background-color: #595959!important; }
+
+body:not(.mod-toolbox) .stylesheet-customize-container textarea#stylesheet_contents { max-width: 96%!important; }
+
+body .tb-action-table { border: 1px solid #222!important; border-radius: 80px!important; margin-right: 3px!important; }
+body .tb-action-table tbody th { background-color: #808080!important; }
+body .tb-action-table tr td { background-color: #999999!important; color: #222!important; }
+
+.tb-window-wrapper .tb-module-disabled { background-color: #999!important; color: #222!important; border-bottom: 1px solid #222!important; }
+.tb-window-wrapper .tb-oldReddit-module { color: #222!important; }
+
+body #tb-context-menu { background-color: #808080!important; border-color: #222!important; border-radius: 0px 5px 5px 0px!important; }
+body #tb-context-menu #tb-context-header { border-right: 1px solid #222!important; color: #222!important; }
+body #tb-context-menu #tb-context-menu-list { border-right: 1px solid #222!important; background-color: #999!important; }
+body #tb-context-menu #tb-context-menu-list li { background-color: #999!important; color: #222!important; border-color: #222!important; }
+
+body .tb-save-warning { background-color: inherit!important; }
+
+body.mod-toolbox-rd #tb-notification-alert { background-color: #808080!important; border-color: #222!important; box-shadow: none; border-radius: 8px; }
+
+.res-show-link { background-color: #999; border: 1px solid #222; border-radius: 0px 0px 5px 5px; border-top: none; }
+.res-show-link a:not(.res-show-link-domain) { color: #004880; }
+.res-show-link a.res-show-link-domain { color: #222; }
+
+#REScommentNavBox hr { color: #222!important; }
+#REScommentNavBox #commentNavButtons * { color: #222!important; }
+
+html[res-warning]::before, body[toolbox-warning]::before { color: #222!important; background-color: #999!important; border: 1px solid #222!important; border-radius: 5px!important; }
+html[res-warning]::before { opacity: 1; font-size: 14px; padding: 5px; font-family: "Verdana", sans-serif; margin-right: 20px; margin-bottom: 16px; }
+body[toolbox-warning]::before { margin-bottom: 20px; }
+
+body .tb-profile-overlay .tb-window-wrapper .tb-window-tabs { background-color: #999; }
+body .tb-profile-overlay .tb-window-wrapper .tb-window-tabs a { width: 450px; border-bottom: 1px solid #222; }
+body .tb-profile-overlay .tb-window-wrapper .tb-window-tabs a:last-of-type { border-right: none!important; }
+body .tb-profile-overlay .tb-window-wrapper .tb-window-tabs-wrapper .tb-comment-body a, body .tb-profile-overlay .tb-window-wrapper .tb-profile-sidebar a, body .tb-profile-overlay .tb-window-wrapper .tb-window-tabs-wrapper .tb-title, body .tb-profile-overlay .tb-window-wrapper .tb-window-tabs-wrapper .tb-link-title, body .tb-profile-overlay .tb-window-wrapper .tb-window-tabs-wrapper .tb-tagline > a:not(.tb-moderator):not(.tb-submitter), body .tb-profile-overlay .tb-window-wrapper .tb-link-author, body .tb-profile-overlay .tb-window-wrapper .subreddit.hover { color: #004880!important; }
+body .tb-profile-overlay .tb-window-wrapper .tb-profile-sidebar .tb-user-detail-ul a:hover, body .tb-profile-overlay .tb-window-wrapper .tb-profile-sidebar .tb-user-modsubs a:hover, body .tb-profile-overlay .tb-window-wrapper .tb-window-tabs-wrapper .tb-tagline > a:not(.tb-moderator):hover { color: #004880!important; text-decoration: underline!important; }
+body .tb-profile-overlay .tb-window-wrapper .tb-window-tabs-wrapper .tb-parent a:hover, body .tb-profile-overlay .tb-window-wrapper .tb-window-tabs-wrapper .tb-title:hover, body .tb-profile-overlay .tb-window-wrapper .tb-window-tabs-wrapper .tb-link-title:hover, body .tb-profile-overlay .tb-window-wrapper .tb-link-author:hover, body .tb-profile-overlay .tb-window-wrapper .subreddit.hover:hover { color: #004880!important; }
+body.mod-toolbox .tb-profile-overlay .tb-window-wrapper .tb-link-author[href="/user/[deleted]"], html body.mod-toolbox .tb-profile-overlay .tb-window-wrapper .tb-trophy-info span { color: #222!important; }
+body.mod-toolbox .tb-profile-overlay .tb-window-wrapper .tb-link-author[href="/user/[deleted]"]:hover, html body.mod-toolbox .tb-profile-overlay .tb-window-wrapper .tb-trophy-info a:hover { color: #222!important; text-decoration: none!important; }
+body .tb-profile-overlay .tb-window-wrapper .tb-thing .tb-comment-buttons a, body .tb-profile-overlay .tb-window-wrapper .tb-window-tabs-wrapper .tb-submission-buttons a, body .context-button-popup .tb-thing .tb-comment-buttons a { color: #222!important; font-weight: bold!important; }
+body .tb-profile-overlay .tb-window-wrapper .tb-window-tabs-wrapper .tb-domain a { color: #222!important; }
+body .tb-profile-overlay .tb-window-wrapper .tb-thing .tb-comment-buttons a:hover, body .tb-profile-overlay .tb-window-wrapper .tb-window-tabs-wrapper .tb-submission-buttons a:hover, body .context-button-popup .tb-thing .tb-comment-buttons a:hover { text-decoration: underline!important; }
+body .tb-profile-overlay .tb-window-wrapper .tb-window-tabs-wrapper .tb-domain a:hover { text-decoration: underline!important; }
+.mod-toolbox .tb-submission, .mod-toolbox-rd .tb-comment-entry { border: 1px solid #222!important; border-radius: 3px!important; background-color: #b3b3b3!important; }
+.mod-toolbox .tb-submission.removed, .mod-toolbox-rd .tb-comment-entry.removed { background-color: #f0a8a8!important; }
+.mod-toolbox .tb-thing .tb-action-details { margin-left: 10px; }
+.mod-toolbox .tb-thing.tb-comment:not(.removed), .mod-toolbox-rd .tb-thing.tb-submission:not(.removed) { background-color: #999!important; }
+.mod-toolbox .tb-profile-overlay .tb-noImage-thumbnail { background-color: #808080!important; border: 1px solid #222!important; border-radius: 4px!important; color: #222!important; }
+.mod-toolbox .tb-profile-overlay .tb-award-gold { color: #944f05!important; }
+.mod-toolbox .tb-profile-overlay .tb-award-platinum { color: #2f6a63!important; }
+.mod-toolbox .tb-window-wrapper .tb-thing > div > .tb-tagline > .tb-userattrs > a.tb-moderator { color: #228822!important; }
+.mod-toolbox .tb-window-wrapper .tb-submission.tb-thing > div > .tb-tagline > .tb-userattrs > a.tb-moderator::before { content: "["; color: #222!important; text-decoration: none!important; margin-left: 2px!important; }
+.mod-toolbox .tb-window-wrapper .tb-submission.tb-thing > div > .tb-tagline > .tb-userattrs > a.tb-moderator::after { content: "]"; color: #222!important; text-decoration: none!important; }
+.mod-toolbox .tb-window-wrapper .tb-thing > div > .tb-tagline > .tb-userattrs > a.tb-moderator:hover { color: #228822!important; text-decoration: underline; }
+.mod-toolbox .tb-thing .tb-tagline a.tb-comment-author.tb-moderator, .mod-toolbox-rd .tb-thing .tb-tagline > a.tb-submission-author.tb-moderator { color: #FFFFFF!important; font-weight: bold!important; padding: 0 2px 0 2px!important; border-radius: 3px!important; background-color: #228822!important; }
+.mod-toolbox .tb-thing .tb-tagline > a.tb-comment-author.tb-moderator:hover, .mod-toolbox-rd .tb-thing .tb-tagline > a.tb-submission-author.tb-moderator:hover { background-color: #134913!important; }
+.mod-toolbox .tb-thing .tb-tagline > a.tb-comment-author.tb-submitter, .thing.collapsed > .entry > .tagline > .author.submitter { color: #FFFFFF!important; font-weight: bold!important; padding: 0 2px 0 2px!important; border-radius: 3px!important; background-color: #0055DF!important; }
+.mod-toolbox .tb-thing .tb-submission-score.neutral, .mod-toolbox-rd .tb-thing .tb-comment-score.neutral { color: #222!important; }
+.mod-toolbox .tb-load-more { color: #222!important; background-color: #808080!important; border: 1px solid #222!important; }
+.mod-toolbox .tb-load-more:hover { background-color: #595959!important; }
+.mod-toolbox ul.tb-user-modsubs-expand-ul li, .mod-toolbox ul.tb-user-modsubs-ul li { border-color: #222!important; }
+.mod-toolbox .tb-general-button.tb-sidebar-loadmod { margin-top: 2px!important; }
+.mod-toolbox .tb-profile-sidebar img.tb-user-thumbnail { border: 2px solid #222!important; padding: 0px!important; border-radius: 8px!important; }
+
+.thing.collapsed > .entry > .tagline > .author.submitter:hover { background-color: #4E7EAB!important; }
+.thing > .entry > .tagline > .userattrs { color: #222; }
+.thing > .entry > .tagline > .userattrs > .submitter { color: #0055df!important; }
+
+.mod-toolbox #tb-loading-stuff, .mod-toolbox-rd #tb-loading-stuff-non-persistent { box-shadow: none!important; border: none!important; }
+
+body.tb-show-actions .content .thing .action-reason { display: none!important; }
+body:not(.tb-show-actions) .content .thing .action-reason { background-color: inherit; border: 1px solid #222; border-radius: 3px; margin-top: 3px; }
+
+.tb-sort-subs img { display: none!important; }
+
+#quickMessage #quickMessageDialog { background-color: #999!important; border-color: #222!important; border-radius: 5px!important; }
+#quickMessage #quickMessageDialog > h3 { background-color: #808080!important; border-color: #222!important; }
+#quickMessage a.blueButton { background-color: #228; border: 1px solid #222; border-width: 1px 1px 2px 1px; }
+#quickMessage input#quickMessageDialogSend { background-color: #282; border: 1px solid #222; border-width: 1px 1px 2px 1px; }
+#quickMessage a.blueButton:active, #quickMessage input#quickMessageDialogSend:active { border-width: 1px!important; transform: translateY(1px); }
+
+#new-link-preview { background-color: #999!important; border: 2px solid #222!important; border-radius: 8px!important; }
+
+.tb-nuke-feedback { border-color: #222!important; }
+.tb-nuke-details input.tb-ignore-distinguished-checkbox { margin-right: 2px!important; }
+
+.score-hidden { color: #222; }
+
+.quarantine-stamp { color: #ffd635; }
+
+.searchpane { background-color: #999; border-color: #222; border-radius: 5px; }
+.searchpane h4 { color: #222!important; }
+
+.thing.collapsed > .entry > .tagline > .expand { color: #222; }
+.thing.collapsed > .entry > .tagline > a.author { color: #004880; font-style: normal; }
+.thing.collapsed > .entry > .tagline > span.author { color: #595959; font-style: normal; }
+.thing.collapsed > .entry > .tagline > .collapsed-reason { color: #222; }
+.thing.collapsed > .entry > .tagline > .numchildren { color: #222; }
+
+#ratelimit-counter { background-color: #999!important; border-color: #222!important; }
+
+.modal-dialog .modal-content { border: 1px solid #222; }
+.modal-dialog .modal-content .modal-body { background-color: #999; }
+.modal-dialog .modal-content .modal-body .crosspost-header-title { color: #222; }
+.modal-dialog .modal-content .modal-body .crosspost-description { background-color: #808080; border-color: #222222; color: #222222; border-radius: 3px; }
+.modal-dialog .modal-content .modal-body .crosspost-thing-preview { background-color: #808080; border-color: #222; }
+.modal-dialog .modal-content .modal-body .crosspost-thing-preview * { color: #222; }
+.modal-dialog .modal-content .modal-body .crosspost-fieldset .required { color: #222; }
+.modal-dialog .modal-content .modal-body .crosspost-fieldset label[for="sendreplies"] { color: #222; }
+.modal-dialog .modal-content .modal-body .crosspost-fieldset .crosspost-link { color: #222; }
+.modal-dialog .modal-content .modal-body .crosspost-fieldset .crosspost-warning { color: #222; }
+.modal-dialog .modal-content .modal-body .crosspost-fieldset .crosspost-warning a { color: #004880!important; }
+.modal-dialog .modal-content .modal-body fieldset .crosspost-button { background-color: #228; border: 1px solid #222; border-width: 1px 1px 2px 1px; }
+.modal-dialog .modal-content .modal-body fieldset .crosspost-button:active { border-width: 1px!important; transform: translateY(1px); }
+
+.contest-mode.infobar { background-color: #999999; border-color: #222222; color: #222222; }
+
+.happening-now-wrap .happening-now { background-color: #808080; border: 1px solid #222; border-radius: 4px; }
+.happening-now-wrap .happening-now p { color: #222; }
+
+.commentarea .panestack-title .title-button.gold, .commentarea .panestack-title .title-button { background: none; border: none; color: #004880; }
+
+body.multi-page .titlebox.multi-details button, body.multi-page .titlebox.multi-details h3 { color: #222; }
+body.multi-page .titlebox.multi-details #sr-drop-down { background-color: #595959; border: 1px solid #222; border-radius: 3px; }
+body.multi-page .titlebox.multi-details #sr-drop-down li { border-top: 1px solid #222; padding-left: 5px; }
+body.multi-page .titlebox.multi-details #sr-drop-down li:first-child { border-top: none!important; }
+
+body.multi-page .titlebox.multi-details .recs h1 { color: #222; }
+body.multi-page .titlebox.multi-details .recs .rec-item { background-color: #595959; border-radius: 10px; border: none; padding-right: 2px; }
+body.multi-page .titlebox.multi-details .recs .rec-item .add-rec { background: none!important; }
+body.multi-page .titlebox.multi-details .recs .more { color: #004880; }
+
+.report-modal .modal-content, .report-modal .modal-body { border-radius: 4px; }
+.report-modal .modal-content .report-reason-item .report-reason-display, .report-modal .modal-content .report-form-bottom-panel .report-form-content-policy p { color: #222; }
+.report-modal .modal-content .report-form-bottom-panel .report-form-content-policy p a { color: #004880; }
+.report-form-action-desc * { color: #222!important; }
+
+.md del { color: #222; }
+
+span.author { color: #595959; }
+
+.titlebox .word { display: none; }
+ .titlebox .number:after { content: " subscribers"; }
+.titlebox .users-online span.number:after { content: " users here now"; }
+
+.morecomments .gray { color: #444!important; }
+
+.embed-modal .modal-title, .embed-modal a { color: #004880; } 
+.embed-modal .modal-content { background: none; border: none; }
+.embed-modal .modal-body { border-radius: 8px 8px 0px 0px; border: 1px solid #222; }
+.embed-modal .modal-footer { border-radius: 0px 0px 8px 8px; border: 1px solid #222; border-width: 0px 1px 1px 1px; background-color: #999; }
+.embed-modal #embed-preview iframe { border: 1px solid #222; }
+
+.usertable .moderator-table tr td { padding-top: 2px; padding-bottom: 2px; }
+.usertable .moderator-table tr:hover { background-color: #999; }
+.usertable .moderator-table tr td .user a { color: #004880; }
+.usertable .moderator-table tr td:nth-of-type(3) { padding-right: 175px; }
+.usertable .moderator-table tr td:nth-of-type(3) * { text-align: center; }
+.usertable .moderator-table tr td:nth-of-type(4), .usertable tr td:nth-of-type(5) { position: relative; }
+.usertable .permission-summary { border-color: #222; padding-right: 4px; padding-left: 4px; }
+.usertable .toggle { background-color: #b3b3b3; border-color: #222222; color: #222222; }
+.usertable tr:hover .toggle { background-color: #999; }
+.usertable tr:hover { background-color: #999; }
+.usertable .toggle .option .togglebutton { border-color: #222; }
+.permission-selector { border: 1px solid #222; border-radius: 6px; }
+.permission-selector label:last-child { border-radius: 0px 0px 5px 5px; }
+.permission-selector label:first-child { border-radius: 5px 5px 0px 0px; background-color: #808080; }
+.permission-selector label:first-child:hover { background-color: #999; }
+.permission-selector label { background-color: #999; }
+.permission-selector label:hover { background-color: #b3b3b3; }
+.permission-selector label.disabled { background-color: #999; color: #595959; }
+.permission-selector hr { background-color: #222!important; margin: 0px; border: none; height: 0.5px; }
+.permission-selector .setpermissions { background-color: #808080; border-radius: 0px 0px 5px 5px; }
+.usertable .moderator-table .permission-bit.added { font-weight: normal; font-style: italic; }
+
+tbody > .modactions { background-color: #999!important; border: 1px solid #222; }
+
+tbody tr .legendColorBox { background-color: #999; }
+tbody tr:nth-of-type(1) .legendColorBox > div > div { border: 5px solid #3cba54!important; }
+tbody tr:nth-of-type(2) .legendColorBox > div > div { border: 5px solid #db3236!important } 
+tbody tr:nth-of-type(3) .legendColorBox > div > div { border: 5px solid #f4c20d!important; }
+tbody tr:nth-of-type(4) .legendColorBox > div > div { border: 5px solid #4885ed!important; }
+tbody tr td.legendLabel { background-color: #999; color: #222; padding-right: 4px; padding-top: 1px; padding-bottom: 1px; }
+tbody tr:first-of-type td.legendLabel { border-radius: 0px 5px 0px 0px; }
+tbody tr:last-of-type td.legendLabel { border-radius: 0px 0px 5px 0px; }
+.legend > div { background: none!important; }
+
+.traffic-table { border: 1px solid #222; }
+.traffic-table tbody tr:nth-child(even) { background-color: #999; }
+
+.styled-reason hr { border-color: #222; height: 0px; border-width: 0.25px; }
+.mod-toolbox .reason-popup .reason-num { color: #444; }
+
+.user-distinction { color: #222; }
+.user-distinction span { font-size: 11px; }
+.user-distinction span:before, .user-distinction span:after { content: ' '; }
+
+span.gray { color: #595959; }
+
+#mod-matrix-wrapper { background-color: #999!important; }
+
+#mod-matrix-wrapper tbody > tr:nth-of-type(2n+1) { background-color: #b3b3b3!important; }
+#mod-matrix-wrapper tbody > tr:nth-of-type(2n) { background-color: #999!important; }
+#mod-matrix-wrapper tfoot { background-color: #999; }
+#mod-matrix-wrapper #mod-matrix tr:hover { background-color: #808080!important; }
+
+.trophy-icon { border: 1px solid #222; border-radius: 12px; }
+
+.res-text-media.md tbody * { background-color: #595959; }
+.res-text-media.md { background-color: #595959!important; border-color: #222!important; }
+.res-text-media.md * { border-color: #222!important; }
+
+.interstitial-subreddit-description { background-color: #999; border: 1px solid #222; border-radius: 12px; }
+.interstitial-message a { color: #004880; }
+
+.removed_comment_text { background-color: #808080!important; }
+
+tr[style="background-color: #ffff99; text-align: center"] { background-color: #999!important; }
+
+.markhelp a { color: #004880!important; }
+
+.server-seconds-public { border-color: #222!important; }
+
+.more-karmas tbody tr td { color: #222!important; font-weight: normal!important; }
+
+.note { color: #222!important; }
+
+.flaircolorlight { color: #FFF!important; }
+
+.dust { color: #222; }
+
+.toc * { border-color: #222!important; }
+
+a.cmyfE, a.kueeEi, a.cjVRCO { background-color: #595959!important; }
+a.jCpNeK, a.jnZTeC { background-color: #999!important; }
+a.jCpNeK *, a.jnZTeC * { color: #222!important; }
+#tooltip-container { background-color: #999!important; padding-bottom: 3px; }
+#tooltip-container * { border-color: #222!important; color: #222; }
+#tooltip-container *:focus { box-shadow: none!important; }
+.e23vrj-3 { border-bottom: none!important; }
+.gOrZlL { background-color: #808080; border-top: 1px solid #222; border-left: 1px solid #222; border-right: 1px solid #222; }
+.s1albn0i-0, .s1albn0i-1 { background-color: #999!important; }
+.h0f3w6-1 { background-color: #808080; }
+.s810vm8-1 { background-color: #808080; }
+.dropdown-container:hover { background-color: #808080; }
+.s1w2coi-1, .s1ooudg8-6 { background-color: #808080; }
+.s1w2coi-1:hover, .s1ooudg8-6:hover { background-color: #595959; }
+.lsgkpx-0 button .ezGOlP[class="s5qnb9m-0 ezGOlP"] { background-color: #808080; border: 1px solid #222; border-radius: 4px; }
+.s19j8s74-1 { border-right: 1px solid #222; border-radius: 0px!important; }
+.s19j8s74-1:first-child { border-radius: 4px 0px 0px 4px!important; }
+.s19j8s74-1:last-child { border-radius: 0px 4px 4px 0px!important; }
+.zz49wb-2:hover { background-color: inherit; }
+#chat-container pre { background-color: inherit!important; }
+#chat-container { padding-bottom: 5px!important; }
+iframe.pinned-to-bottom { border-radius: 4px!important; border: 1px solid #222!important; }
+.OLVjZ { background-color: #808080; border: 1px solid #222; border-radius: 3px; }
+.s19j8s74-1 { background-color: #808080; border-radius: 3px}
+.h4e6i3-0 div { background-color: #808080; border-top: 1px solid #222; border-bottom: 1px solid #222; }
+.jogEUo { display: none; }
+.s1ooudg8-4 div { border: none; }
+.s1ooudg8-11, .s1ooudg8-8 { border: none!important; }
+g * { fill: #222!important; }
+span[class=".h0f3w6-0 .s19j8s74-1"] { border-radius: 4px!important; }
+svg[class="s5qnb9m-0 ezGOlP"] * { fill: #222!important; }
+.h0f3w6-0 { background: none!important; border: 1px solid #222!important; margin-right: 0px; }
+.m0gh4e-1 { border-top: 1px solid #222!important; }
+svg[class="zz49wb-1 hgrqOA s5qnb9m-0 ezGOlP"] *, svg[class="s14zmds0-1 kxoVRU s5qnb9m-0 ezGOlP"], svg[class="m0gh4e-0 iZoJEo s5qnb9m-0 ezGOlP"] { fill: #222!important; }
+.s14zmds0-2.cOekVZ.s5qnb9m-0.ezGOlP path:first-child, svg[class="s8l6j2b-1 iDtyex s5qnb9m-0 ehoYMV"] { fill: #444!important; }
+.s8l6j2b-0 { margin-bottom: 5px; margin-top: 10px; }
+.s8l6j2b-5 { border: 1px solid #222!important; padding-left: 13px}
+.okwj9w-2 { box-shadow: none!important; background-color: #999; }
+.okwj9w-4 { background-color: #808080; border: none; border-left: 1px solid #222; }
+.s11rrl6b-0 { background-color: #999; }
+.s11rrl6b-0:hover, .s1o4sve7-3:hover, .s18xxabp-0:hover { background-color: #808080; }
+.s5fdb09-4 { background-color: #808080; border: 1px solid #222; }
+.s5fdb09-4:active, .s5fdb09-4:focus { background-color: inherit; }
+.s1vu8wmx-0 { border: 1px solid #222; border-radius: 4px; }
+
+label[for="modtab-threshold"] { color: #222!important; }
+
+.app-scope { background-color: #808080; padding: 3px; }
+
+.link { background-color: #b3b3b3; box-shadow: none; border: none; }
+
+.preftable .details, span.gray { color: #444; }
+
+.rounded.white-field { background-color: #808080; border: 1px solid #222; }
+
+#RESNotifications * { border-color: #222; }
+
+.tb-popup { box-shadow: none!important; }
+
+.img-preview-container { border-color: #222!important; }
+
+.
+
+.ThreadViewer__infobar { background-color: #808080; border-left: 1px solid #222; }
+.InfoBar { background-color: #808080; }
+.InfoBar__recentsTitle { color: #222; }
+.InfoBar__recentsNone { color: #444; }
+.InfoBar__age { color: #222; font-weight: bold; font-size: 80%; margin-bottom: -10px; margin-top: -10px; }
+.InfoBar__username, .InfoBar__recent { color: #004880; }
+.InfoBar__username:visited, .InfoBar__recent:visited { color: #551A8B; }
+.InfoBar__username:visited:hover, .InfoBar__recent:visited:hover { color: #551A8B; text-decoration: underline; }
+.InfoBar__username:hover, .InfoBar__recent:hover { color: #004880; text-decoration: underline; }
+.Checkbox__label { color: #595959; }
+.ReportButton__button { background-color: #228; border: 1px solid #222; border-width: 1px 1px 2px 1px; border-radius: 5px; }
+.ReportButton__button:active { border-width: 1px!important; transform: translateY(1px); }
+.NewThread__formattingHelp { color: #222; }
+.FormattingHelp { background-color: #808080; }
+.FormattingHelp * { color: #222; border-color: #222; }
+.FormattingHelp__tableCol.m-highlight { background-color: #228; }
+.FormattingHelp__code { background-color: #595959; }
+.FormattingHelp__codeLine { background-color: #808080; }
+.App__body { background-color: #b3b3b3; }
+.Search__inputContainer, .m-focused .Search__inputContainer { background-color: #808080; border: 1px solid #222; border-radius: 8px; margin-right: 5px; }
+.Search { border: none; }
+.App .Header, .App .App__header { background-color: #595959; border-color: #222; }
+.Header__user { color: #004880; }
+.Header__userIcon { color: #004880; }
+.ThreadViewer__header { background-color: #808080; border-color: #222; }
+.App__sidebar { background-color: #808080; border-color: #222; }
+.SidebarNav__item { color: #222!important; }
+.SidebarNav__item .SidebarNav__count { background-color: #222; }
+.SidebarNav__item.m-selected *, .SidebarNav__item:hover * { color: #444!important; }
+.SidebarNav__item.m-selected .SidebarNav__count, .SidebarNav__item:hover .SidebarNav__count { background-color: #444!important; color: #FFF!important; }
+.Sidebar * { border-color: #222; }
+.ThreadViewerHeader__backIcon, .Sidebar__newMessage { color: #222!important; }
+.App__sidebarFooter { background-color: #808080; border-color: #222; }
+.App__sidebarFooterLink { border-color: #222!important; }
+.App__sidebarFooterIcon { color: #222; }
+.FancySelect__tooltip { box-shadow: none; background-color: #808080!important; border: 1px solid #222; }
+.FancySelect__tooltip__arrow { border-bottom-color: #808080!important; }
+.ThreadViewerReplyForm__replyOptions .FancySelect__tooltip__arrow { border-top-color: #808080!important; }
+.FancySelect__option:hover { background-color: #999; color: #222; }
+.FancySelect__option { border-color: #222!important; }
+.FancySelect__label { color: #222; }
+.FancySelect__valueText, .FancySelect__valueIcon { color: #004880!important; }
+.ThreadPreviewViewer__header { background-color: #808080; border-color: #222; }
+.NoThreadMessage * { color: #222; }
+.SidebarCommunity__blankIcon { color: #595959; }
+.SidebarCommunity:hover .SidebarCommunity__blankIcon { color: #999; }
+.SidebarCommunity__name { color: #595959; }
+.SidebarCommunity:hover .SidebarCommunity__name { color: #999; }
+.ThreadListing__threads { background-color: #b3b3b3!important; }
+.ThreadListing__thread  { background-color: #999!important; box-shadow: none; border: 1px solid #222; border-radius: 10px; }
+.ThreadPreview__authors { line-height: normal; }
+.ThreadPreview__author.m-mod, .Message__author.m-mod { color: #FFFFFF!important; font-weight: bold!important; padding: 1px 2px 1px 2px!important; border-radius: 3px!important; background-color: #228822!important; font-size: x-small}
+.ThreadPreview__author.m-mod:hover, .Message__author.m-mod:hover { background-color: #134913!important; text-decoration: none; }
+.Message__author.m-mod { padding-top: 5px!important; padding-bottom: 3px!important; padding-left: 5px!important; padding-right: 5px!important; border-radius: 15px!important; }
+.ThreadPreview__author:not(.m-mod):hover { color: #222!important; }
+.ThreadPreview__controlIcon { color: #222!important; }
+.ThreadPreview__controlIcon:hover { color: #444!important; }
+.Thread__messageIsMod { background-color: #228822; }
+.ThreadViewer__threadContainer { background-color: #999; }
+.ThreadViewer__threadContainer .Thread__title, .Thread__message, .ThreadViewer__replyContainer, .Thread__grouped { border-color: #222!important; }
+.Thread__grouped { background-color: #808080; }
+.Thread__grouped * { border: none; background-color: #808080; }
+.Thread__grouped .Thread__groupedTextMessages:after { content: " hidden"}
+.Message__date, .Message__divider, .Message__report, .Message__quote, .Message__internalNote, .ThreadViewerReplyForm__formattingHelp, .ThreadTitle__community, .ThreadTitle__title, .NewThread__cancelArrow, .ThreadPreview__time { color: #222!important; }
+.ThreadTitle__communityImage { border-color: #222; width: 30px; height: 30px; }
+.Thread__message .md p { color: #222; }
+.Thread__message .md a { color: #004880; }
+.ThreadViewerHeader__control:hover .ThreadViewerHeader__controlIcon, .ThreadViewerHeader__control:hover .ThreadViewerHeader__controlText { color: #444; }
+.ThreadViewerHeader__controlIcon { color: #222; }
+.ThreadPreview__control:hover .ThreadPreview__controlIcon { color: #444!important; }
+.icon.icon-check:before, .ThreadPreviewViewerHeader__iconLabel { color: #222; }
+.ThreadPreviewViewerHeader__button:hover .icon.icon-check:before, .ThreadPreviewViewerHeader__button:hover .ThreadPreviewViewerHeader__iconLabel { color: #444; }
+.InfoBar__controlIcon:before, .InfoBar__controlText { color: #222; }
+.InfoBar__control:hover .InfoBar__controlIcon:before, .InfoBar__control:hover .InfoBar__controlText { color: #444; }
+.ThreadViewer__infobarContainer { border: none; }
+.ThreadViewerReplyForm__replyButton { background-color: #282!important; border: 1px solid #222; border-radius: 5px; border-bottom-width: 2px; }
+.ThreadViewerReplyForm__replyButton:active { border-bottom-width: 1px; transform: translateY(1px); }
+.ThreadViewerReplyForm__replyFooter { height: 5%; }
+.ThreadViewer__infobarContainer { background-color: #808080; }
+.InfoBar .masstagger { font-size: 90%; display: inline-block }
+.NewThread__form { box-shadow: none; border: 1px solid #222; border-radius: 15px; background-color: #999; }
+.Radio__input:checked+.Radio__circle:before, .Radio__input:checked+.Radio__circle+.Radio__label { color: #222; }
+.Radio__circle, .Radio__label { color: #595959; }
+.Checkbox__input:checked+.Checkbox__circle:before, .Checkbox__input:checked+.Checkbox__circle+.Checkbox__label { color: #222; }
+.Checkbox__input+.Checkbox__circle:before, .Checkbox__input+.Checkbox__circle+.Checkbox__label { color: #595959; }
+.ThreadTitle__communityIcon { width: 30px; height: 30px; border-color: #222; background-color: #808080; }
+.ThreadTitle__communityIcon:before { display: none; }
+.Thread__modAction { border-color: #222!important; }
+.ModAction__author { color: #282; }
+.ModAction__text { color: #222; }
+.SidebarCommunity:hover .SidebarCommunity__selectedIcon:before { color: #999!important; }
+.ThreadListing__internalThread { background: none; width: 2%; border-radius: 8px; border: 1px solid #282; border-width: 0px 0px 0px 6px; }
+.ThreadPreview__badge { color: #222!important; }
+.ThreadPreview__author.m-admin, .Message__author.m-admin { background-color: #FF0011; color: #FFF; padding: 1px 2px 1px 2px; border-radius: 3px; font-size: x-small; font-weight: bold; }
+.ThreadPreview__author.m-admin:hover, .Message__author.m-admin:hover { background-color: #B3000C; color: #FFF!important; text-decoration: none; }
+.ThreadPreview__author, .Message__author { color: #222!important; }
+.SidebarCommunities__community .SidebarCommunity__name:before { content: '/'; }
+.SidebarCommunities__allCommunities .SidebarCommunity__name { font-size: 0px; }
+.SidebarCommunities__allCommunities .SidebarCommunity__name:after { content: 'All Subreddits'; font-size: 14px; }
+.SidebarCommunities__sort .FancySelect__label { font-size: 0px; }
+.SidebarCommunities__sort .FancySelect__label:after { content: 'Subreddits by'; font-size: 13px; }
+.SidebarCommunities__sort .FancySelect__valueText { font-size: 0px; }
+.SidebarCommunities__sort input[value="subscribers"]+.FancySelect__label+.FancySelect__value .FancySelect__valueText:after { content: 'subscriber count'; font-size: 13px; }
+.SidebarCommunities__sort input[value="activity"]+.FancySelect__label+.FancySelect__value .FancySelect__valueText:after { content: 'activity'; font-size: 13px; }
+.SidebarCommunities__sort input[value="name"]+.FancySelect__label+.FancySelect__value .FancySelect__valueText:after { content: 'name'; font-size: 13px; }
+.ThreadTitle__community:before { content: '/r/'; }
+.Toaster { box-shadow: none!important; border: 1px solid #222; margin-top: 5px; border-radius: 8px; }
+.Toaster__message { color: #222; border-radius: 0px 7px 7px 0px; background-color: #595959}
+.Toaster__close:before { color: #222; }
+.Toaster__icon { border-radius: 7px 0px 0px 7px; background-color: #595959!important; }
+.Toaster__icon:before { color: #222; }
+.App__sidebarMenu { width: 94%; }
+.SidebarNav__count { margin-right: 3%; }
+.Sidebar__newMessage { margin-right: 5%; }
+.Message__date { margin-left: 0.5%; }
+.ReportForm { background-color: #999; border: 1px solid #222; border-top-left-radius: 10px; }
+.ReportForm * { border-color: #222!important; }
+.AccordionSection__articleWrap, .AccordionSection__sectionHead { background-color: #808080; }
+.AccordionSection__sectionHead.open, .AccordionSection__chevron.open:before { color: #004880; }
+.AccordionSection__sectionHead:not(.open), .AccordionSection__chevron:not(.open):before { color: #222; }
+.FirstPage__contentPolicyHolder a { color: #004880; }
+.FirstPage__submitButton { background-color: #228; border: 1px solid #222; border-width: 1px 1px 2px 1px; }
+.FirstPage__submitButton:active { border-bottom-width: 1px; transform: translateY(1px); }
+.ReportForm__close { color: #222; }
+.ThreadPreview__authors:after { content: '•'; font-size: 15px; color: #999; }
+
+#helpcenter-form * { border-color: #222!important; }
+.helpcenter-header, .accordion-section-header { color: #222; }
+.helpcenter-content-policy a { color: #004880!important; }
+.section-button:before, .section-button:after { background-color: #222!important; }
+.accordion-section-header { border-bottom-width: 2px!important; }
+.open .accordion-section-header { color: #004880!important; }
+.open .section-button:before, .open .section-button:after { background-color: #004880!important; }
+.helpcenter-form .section-content { background-color: #999; border: 1px solid #222; }
+.helpcenter-form .add-username-button { color: #004880; }
+
+.gearIcon::before, .gearIcon::after { color: #004880; text-shadow: #3b5a73 0px 0px 1px; }
+
+.snoovatar-page .inputs { background-color: #999!important; border-color: #222!important; border-width: 2px!important; border-radius: 15px!important; }
+#color { cursor: pointer; }
+.snoovatar-page p, .snoovatar-page .label, .snoovatar-page h1 { color: #222; }
+.snoovatar-page a { color: #004880; }
+.snoovatar-page .button-big { background: #b33000!important; border: 2px solid #222!important; border-bottom-width: 4px!important; border-radius: 10px!important; }
+.snoovatar-page .button-big:active { border-bottom-width: 2px!important; transform: translateY(2px); }
+.snoovatar-page .proxy-checkbox { background: #3b5a73!important; color: #222!important; box-shadow: none!important; border-color: #222!important; }
+.snoovatar-page .button { border: none; }
+.snoovatar-page .icon { background-color: #3b5a73!important; color: #222!important; border: 2px solid #222!important; box-shadow: none!important; }
+#random.button .icon, #clear.button .icon { border-radius: 8px; }
+#snoo-body.button .icon { border-radius: 5px 0px 0px 5px; }
+#grippables.button .icon { border-radius: 0px 5px 5px 0px; }
+
+.redditname+.subscribe-button .option { font-size: 0px; }
+.redditname+.subscribe-button .option.remove:after { content: "unfollow"; font-size: 15px; background-color: #990000; color: #FFF; padding-right: 10px; padding-left: 10px; padding-top: 1px; padding-bottom: 1px; border: 1px solid #200; border-bottom-width: 2px; border-radius: 50px; }
+.redditname+.subscribe-button .option.remove:active::after { border-bottom-width: 1px; transform: translateY(1px)!important; }
+.redditname+.subscribe-button .option.remove:active::after, .redditname+.subscribe-button .option.remove:hover::after { background-color: #800000; }
+.redditname+.subscribe-button .option.add:after { content: "follow"; font-size: 15px; background-color: #488448; padding-right: 20px; padding-left: 19px; padding-bottom: 1px; padding-top: 1px; border: 1px solid #020; border-bottom-width: 2px; border-radius: 50px; color: #FFF; }
+.redditname+.subscribe-button .option.add:active::after { border-bottom-width: 1px; transform: translateY(1px)!important; }
+.redditname+.subscribe-button .option.add:active::after, .redditname+.subscribe-button .option.add:hover::after { background-color: #366336; }
+.redditname+.subscribe-button+.subscribers { display: block; margin-top: 2%; }
+
+.wiki-page-content pre { padding: 6px; }
