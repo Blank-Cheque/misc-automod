@@ -1,6 +1,6 @@
 # This will remove all mentions of subreddits other than a certain set of subreddits
 type: any
-title+body (regex): '((https?://)?(np\.|www\.|old\.|new\.)?reddit\.com)?/?r/(?!(SUBREDDIT 1|SUBREDDIT 2|SUBREDDIT 3)(?!\w))\S+\b'
+title+body (regex, includes): '((https?://)?(np\.|www\.|old\.|new\.)?reddit\.com)?/?r/(?!(SUBREDDIT 1|SUBREDDIT 2|SUBREDDIT 3)(?!\w))\S+\b'
 action: remove
 action_reason: 'Disallowed sub mention'
 
@@ -64,7 +64,7 @@ action_reason: 'Contains disallowed word "{{match}}"'
 
 # Removes comments which contain image or video links
 type: comment
-title+body (regex): 
+title+body (regex, includes): 
     - '\b(?:https?://)?((?:\S+\.)?(?:\S+)(?:\.(?:com?|net|gov|us|uk|info|eu|it|io|tv|moe|ws)))(/(?:[\S]+)(\.(?:png|jpe?g|gifv?|mp4)))\b'
     - '\b(?:https?://)?((?:www\.)?google\.com)(/search\?\S+)(imgrc=\S+)\b'
     - '\b(?:https?://)?((?:www\.)?gfycat.com)(\/\S+)\b'
@@ -76,7 +76,7 @@ action_reason: "Comment contains image or video link: '{{match}}'"
 
 # Removes comments which contain image links (videos allowed)
 type: comment
-title+body (regex): 
+title+body (regex, includes): 
     - '\b(?:https?://)?((?:\S+\.)?(?:\S+)(?:\.(?:com?|net|gov|us|uk|info|eu|it|io|tv|moe|ws)))(/(?:[\S]+)(\.(?:png|jpe?g)))\b'
     - '\b(?:https?://)?((?:www\.)?google\.com)(/search\?\S+)(imgrc=\S+)\b'
     - '\b(?:https?://)?((?:www\.)?imgur\.com)((/a)/?\w{4,})(\.(?:png|jpe?g))\b'
@@ -87,7 +87,7 @@ action_reason: "Comment contains image link: '{{match}}'"
 
 # Removes comments which contain video links (images allowed)
 type: comment
-title+body (regex): 
+title+body (regex, includes): 
     - '\b(?:https?://)?((?:\S+\.)?(?:\S+)(?:\.(?:com?|net|gov|us|uk|info|eu|it|io|tv|moe|ws)))(\/(?:[\S]+)(\.(?:gifv?|mp4)))\b'
     - '\b(?:https?://)?((?:www\.)?gfycat.com)(\/\S+)\b'
     - '\b(?:https?://)?((?:www\.)?youtu\.?be(?:\.com)?)(/watch\S+)\b'
